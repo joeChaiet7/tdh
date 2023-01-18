@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+
+.conditionManagement {
+  .coach {
+    padding: 5rem 0;
+  }
+  
+  .accordion, .stats {
+    & > div {
+      > section {
+        padding: 4rem 0;
+      }
+    }
+  }
+  
+  .teaserVideo {
+    & > div {
+      section {
+        padding: 5rem 0;
+      }
+    }
+  }
+  
+  .disclaimer {
+    @extend %disclaimer;
+  }  
+}

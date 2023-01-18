@@ -1,0 +1,103 @@
+@use '../../../styles/abstracts/' as *;
+
+.tileRow {
+  padding: 2rem 0;  
+}
+
+.container {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+}
+
+.heading {
+  max-width: 750px;
+  margin: 0 auto;
+
+  @include small {
+    padding: 0 2rem;
+  }
+
+  @include medium {
+    padding: 0;
+  }
+
+  .title {
+    font-family: $fontFamilyTitle;
+    font-size: 2.5rem;
+    color: $dark-purple;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    text-align: center;
+    color: $dark-purple;
+    margin-top: 1rem;
+  }
+}
+
+.items {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  margin-top: 4rem;
+  padding: 0 2rem;
+  gap: 2rem;
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.item {
+  border-radius: 40px;
+  box-shadow: 5px 10px 25px $shadow;
+  flex: 1 200px;
+  align-self: stretch;
+
+  .itemImage {
+    height: 350px;
+    border-radius: 40px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.itemContent {
+  padding: 2rem;
+}
+
+.itemTitle {
+  font-size: 1.25rem;
+  font-family: $fontFamilySemiBold;
+  color: $dark-purple;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.itemDesc {
+  font-family: $fontFamilyBase;
+  color: $dark-purple;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.cta {
+  margin-top: 4rem;
+
+  /* CallToAction override */
+  & > div a {
+
+    @include small {
+      min-width: 300px;
+    }
+
+    @include medium {
+      min-width: 150px;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+@use '../../../styles/abstracts' as *;
+
+.heroWave {
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow: hidden;
+
+  &.grey {
+    background-color: $grey;
+  }
+
+  &.darkPurple {
+    background-color: $dark-purple
+  }
+}
+
+.clipPath {
+  position: relative;
+  z-index: 5;
+  top: 5px;
+}
+
+.container {
+  @extend %flex-row-align-center;
+  align-items: center;
+  flex: 1;
+  max-width: $layoutWidth;
+  height: 100%;
+  margin: 0 auto;
+
+  @include small {
+    flex-direction: column;
+    padding: calc($navHeight + 2rem) 1rem 0;
+  }
+
+  @include medium {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: calc($navHeight + 1rem) 2rem 0;
+  }
+
+  @include large {
+    //height: 50vh;
+  }
+
+  @include wide {
+    gap: 3rem;
+  }
+}
+
+.content {
+  flex: 0.4;
+
+  @include small {
+    flex: 1;
+  }
+
+  @include large {
+    flex: 0.45;
+  }
+}
+
+.heading {
+  h1, .title {
+    font-size: 3rem;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+}
+
+.image {
+  @extend %flex-row-align-center;
+  justify-content: flex-end;
+  position: relative;
+
+  img {
+    @include large {
+      max-width: 90%;
+    }
+  }
+  
+  svg {
+    position: absolute;
+  }
+
+  @include small {
+    position: relative;
+    top: 3rem;
+    height: 250px; 
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include medium {
+    height: 450px;
+    top: 5rem;
+    right: -5rem;
+  }
+
+  @include large {
+    height: 500px;
+    flex: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 4rem;
+    right: 0;
+  }
+
+  @include wide {
+    flex: 0.6;
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+
+  /* Call To Action Override */
+  > div {
+    justify-content: flex-start;
+  }
+}

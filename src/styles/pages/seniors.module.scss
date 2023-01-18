@@ -1,0 +1,24 @@
+@use '../abstracts/' as *;
+
+.seniors {
+  .text {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .testimonial {
+    padding: 5rem 0;
+  }
+
+  .banner {
+    & > section {
+      padding-top: 0;
+    }
+  }
+
+  .disclaimer {
+    @extend %disclaimer;
+    padding: 0 0 3rem;
+  }
+}

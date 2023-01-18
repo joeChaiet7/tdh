@@ -1,0 +1,436 @@
+@use '../../../styles/abstracts/' as *;
+
+$shapeSize: 400px;
+
+/* Product Styles */
+/*.primaryCare {
+  .product {
+    @include small {
+      color: $white;
+    }
+
+    @include medium {
+      color: $purple;
+    }
+  }
+}*/
+
+.mentalHealth {
+  /*.product {
+    @include small {
+      color: $white;
+    }
+
+    @include medium {
+      color: $dark-purple;
+    }
+  }*/
+
+  .shapeA, .imageMobile {
+    background-color: $green;
+  }
+}
+
+.conditionManagement {
+  /*.product {
+    @include small {
+      color: $white;
+    }
+
+    @include medium {
+      color: $dark-purple;
+    }
+  }*/
+
+  .shapeA, .imageMobile {
+    background-color: $pink;
+  }
+}
+
+.heroService {
+  position: relative;
+  //padding-bottom: 3rem;
+  overflow: hidden;
+
+  @include small {
+    padding-top: $navHeight;
+    min-height: 750px;
+    margin-bottom: 1rem;
+  }
+
+  @include medium {
+    padding-top: unset;
+    height: 65vh;
+    min-height: 675px;
+    max-height: 675px;
+    margin-bottom: 0;
+  }
+
+  @include large {
+    height: 75vh;
+  }
+
+  &.start {
+    .content {
+      order: 0;
+    }
+
+    .image {
+      order: 1;
+      border-radius: 200px 0 0 200px;
+    }
+
+    @include small {
+      .image {
+        right: 0;
+        align-self: flex-end;
+      }
+    }
+
+    @include large {
+      .container {
+        flex-direction: row;
+      }
+
+      .image {
+        right: 0;
+      }
+    }
+  }
+
+  &.end {
+    .content {
+      order: 1;
+    }
+
+    .image {
+      order: 0;
+      border-radius: 0 200px 200px 0;
+    }
+
+    @include small {
+      .image {
+        left: 0;
+        align-self: flex-start;
+      }
+    }
+
+    @include large {
+      .container {
+        flex-direction: row-reverse;
+      }
+
+      .image {
+        left: 0;
+      }
+    }
+  }
+}
+
+.product {
+  font-family: $fontFamilyTitle;
+  color: $dark-purple;
+  text-transform: capitalize;
+
+  @include small {
+    text-align: left;
+    font-size: 1.25rem;
+  }
+
+  @include medium {
+    font-size: 1.5rem;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1;
+  max-width: $layoutWidth;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  @include small {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  @include large {
+    gap: 3rem;
+  }
+
+  @include wide {
+    gap: 5rem;
+  }
+}
+
+.content {  
+  @include small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 1rem;
+    //background-color: $dark-purple;
+  }
+
+  @include medium {
+    text-align: left;
+    padding: calc($navHeight + 3rem) 1rem 1rem;
+    margin-top: 0;
+    background-color: transparent;
+    width: unset;
+    border-radius: unset;
+    align-self: unset;
+    flex: 0.95;
+  }
+
+  @include large {
+    text-align: left;
+    flex: 0.65
+  }
+
+  h1 {
+    @include small {
+      font-size: 2.25rem;
+      color: $dark-purple;
+      text-align: left;
+    }
+
+    @include medium {
+      font-size: 3rem;
+    }
+
+    @include large {
+      max-width: 500px;
+    }
+
+    @include wide {
+      font-size: 3.35rem;
+    }
+  }
+
+  .subtitle {
+    font-family: $fontFamilyBase;
+
+    @include small {
+      text-align: left;
+      color: $dark-purple;
+      margin-top: 2rem;
+    }
+
+    @include medium {
+      margin-top: 2rem;
+    }
+  }
+  
+  /* Breadcrumb Override 
+  & > div {
+    nav {
+      font-family: $fontFamilyTitle;
+      margin-bottom: 0.5rem;
+      
+      ol {
+
+        li {
+
+          @include small {
+            color: $white;
+
+            a {
+              color: $white;
+            }
+          }
+
+          @include medium {
+            color: $dark-purple;
+
+            a {
+              color: $dark-purple;
+            }
+          }
+
+          &:last-of-type {
+            a {
+              @include small {
+                color: $blue;
+              }
+
+              @include medium {
+                color: $purple;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & > div {
+    p {
+      margin-top: 1rem;
+      margin-bottom: 0;
+      color: $dark-purple;
+      font-family: $fontFamilyBase;
+    }
+  }*/
+}
+
+.imageMobile {
+  background-color: $purple;
+  width: 99%;
+  align-self: flex-end;
+  border-radius: 200px 0 0  200px;
+  max-width: 750px;
+
+  @include small {
+    display: flex;
+  }
+
+  @include medium {
+    display: none;
+  }
+
+  img {
+    border-radius: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 40%;
+    min-width: 250px;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: 0;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: flex-start;
+  //height: 100%;
+  width: 55%;
+  top: 0;
+  overflow: hidden;
+
+  flex: 1;
+  height: 100%;
+  
+  @include small {
+    display: none;
+  }
+
+  @include medium {
+    display: flex;
+    position: relative;
+    right: -50px;
+  }
+
+  @include large {
+    width: 60%;
+  }
+}
+
+.imageInner {
+  @extend %flex-row-align-center;
+  justify-content: flex-end;
+  height: 95%;
+  width: 100%;
+  //gap: 1px;
+  position: relative;
+  bottom: 20px;
+}
+
+.shapeContainer {
+  @extend %flex-row-align-center;
+  height: 100%;
+  background-color: $blue;
+  border-radius: 0 0 200px 200px;
+}
+
+.shapeA {
+  border-radius: 200px;
+  background-color: $purple;
+  //width: 50%;
+  align-self: flex-end;
+  transition: height 2s;
+  height: 0;
+  position: relative;
+
+  &.loaded {
+    @include medium {
+      height: 75%;
+    }
+  
+    @include large {
+      height: 80%;
+    }
+  }
+
+  img {
+    border-radius: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: $shapeSize;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: -1px auto 0;
+    transition: opacity 2s;
+  }
+}
+
+.shapeB {
+  flex: 0 $shapeSize;
+  border-radius: 0 0 200px 200px;
+  background-color: $dark-purple;
+  align-self: flex-start;
+  height: 0;
+  transition: height 2s;
+
+  &.loaded {
+    height: 65%;
+  }
+}
+
+.cta {
+
+  /* CTA Overrides */
+  & > div {
+    justify-content: flex-start;
+  }
+
+  @include small {
+    margin-top: 2rem;
+
+    /* CTA Override */
+    & > div {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+}
+
+.additional {
+  margin-top: 1rem;
+  font-family: $fontFamilySemiBold;
+  text-align: left;
+  font-size: 0.9rem;
+
+  @include small {
+    color: $white;
+    padding-right: 2rem;
+    max-width: 400px;
+  }
+
+  @include medium {
+    color: $dark-purple;
+  }
+}

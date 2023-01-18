@@ -1,0 +1,93 @@
+@use '../../../styles/abstracts/' as *;
+
+.waveBackground {
+  position: relative;
+  overflow: hidden;
+
+  & > section {
+    //overflow: hidden;
+  }
+
+  /* Background Colors*/
+  &.lightBlue {
+    .content {
+      background-color: $light-blue;
+    }
+
+    .waveTop, .waveBottom {
+      background-color: $light-blue;
+    }
+  }
+
+  &.dark {
+    .content {
+      background-color: $dark-purple;
+    }
+
+    .waveTop, .waveBottom {
+      background-color: $dark-purple;
+    }
+  }
+
+  &.purple {
+    .content {
+      background-color: $purple;
+    }
+
+    .waveTop, .waveBottom {
+      background-color: $purple;
+    }
+  }
+
+  &.lightPurple {
+    .content {
+      background-color: $light-purple;
+    }
+
+    .waveTop, .waveBottom {
+      background-color: $light-purple;
+    }
+  }
+
+  &.grey {
+    .content {
+      background-color: $grey;
+    }
+
+    .waveTop, .waveBottom {
+      background-color: $grey;
+    }
+  }
+
+  &.lightGrey {
+    .content {
+      background-color: $light-grey;
+    }
+
+    .waveTop, .waveBottom {
+      background-color: $light-grey;
+    }
+  }
+}
+
+.topShape {
+  position: relative;
+  z-index: 4;
+  //height: 100px;
+  overflow: hidden;
+  bottom: -1px;
+}
+
+.bottomShape {
+  position: relative;
+  z-index: 4;
+  //height: 100px;
+  overflow: hidden;
+  top: -1px;
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+  padding: 0;
+}

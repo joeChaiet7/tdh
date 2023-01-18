@@ -1,0 +1,64 @@
+@use '../../styles/abstracts/' as *;
+
+.modal {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba($color: #333, $alpha: 0.75);
+  z-index: 100;
+  transition: opacity 0.3s, visibility 0.3s, backdrop-filter 0.3s;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  backdrop-filter: blur(10px);
+
+  .video {
+    transform: translateY(0);
+  }
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(0);
+
+  .video {
+    transform: translateY(100px);
+  }
+}
+
+.container {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 6;
+}
+
+.close {
+  width: unset !important;
+  align-self: flex-end !important;
+  font-size: 2rem;
+  color: $white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

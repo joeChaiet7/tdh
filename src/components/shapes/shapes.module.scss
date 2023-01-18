@@ -1,0 +1,62 @@
+.circle {
+  border-radius: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.halfCircle {
+  &.top {
+    border-radius: 0 0 300px 300px;
+  }
+
+  &.bottom {
+    border-radius: 300px 300px 0 0;
+  }
+
+  &.right {
+    border-radius: 300px 0 0 300px;
+  }
+
+  &.left {
+    border-radius: 0  300px 300px 0 ;
+  }
+}
+
+.drop {
+  &.vertical {
+    &.topLeft {
+      border-radius: 0 300px 150px 150px;
+    }
+  
+    &.topRight {
+      border-radius: 300px 0  150px 150px;
+    }
+  
+    &.bottomLeft {
+      border-radius: 150px 150px 300px 0;
+    }
+  
+    &.bottomRight {
+      border-radius: 150px 150px  0 300px;
+    }
+  }
+
+  &.horizontal {
+    &.topLeft {
+      border-radius: 0  150px 150px 300px;
+    }
+  
+    &.topRight {
+      border-radius:  150px 0 300px 150px;
+    }
+  
+    &.bottomLeft {
+      border-radius: 300px 150px 150px 0;
+    }
+  
+    &.bottomRight {
+      border-radius: 150px 300px 0 150px;
+    }
+  } 
+}

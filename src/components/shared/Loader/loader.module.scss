@@ -1,0 +1,62 @@
+@use '../../../styles/abstracts/' as *;
+
+$loaderSize: 40;
+$strokeWidth: 8;
+
+.loader {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.spinner {
+  width: $loaderSize + px;
+  height: $loaderSize + px;
+  overflow: visible;
+
+  path {
+    fill: transparent;
+    stroke-width: $strokeWidth;
+    stroke-linecap: round;
+    stroke-dasharray: (3.25 * $loaderSize);
+    transform-origin: (0.5px * $loaderSize) (0.5px * $loaderSize) 0;
+    animation: loader 4s linear infinite;
+  }
+}
+
+.shapeA {
+  stroke: $dark-purple;
+  z-index: 1;
+}
+
+.shapeB {
+  stroke: $blue;
+  z-index: 2;
+}
+
+.shapeC {
+  stroke: $blue;
+  z-index: 2;
+}
+
+.shapeD {
+  stroke: $dark-purple;
+  z-index: 1;
+}
+
+@keyframes loader {
+  0% {
+    stroke-dashoffset: (0.66 * $loaderSize);
+    transform: rotate(0deg);
+  } 
+  
+  50% {
+    stroke-dashoffset: (3.14 * $loaderSize);
+    transform: rotate(540deg);
+  } 
+  
+  100% {
+    stroke-dashoffset: (0.66 * $loaderSize);
+    transform: rotate(1080deg);
+  }
+}

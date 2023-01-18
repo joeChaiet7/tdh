@@ -1,0 +1,233 @@
+@use '../../styles/abstracts/' as *;
+
+$buttonHeight: 70px;
+$maxHeight: 715px;
+
+.listItem {
+  border-bottom: 2px solid $grey;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  //max-height: var(--buttonHeight);
+  text-align: left;
+
+  @include small {
+    .itemHeading {
+      font-size: 1rem;
+    }
+
+    svg {
+      min-width: 20px;
+      min-height: 20px;
+    }
+  }
+
+  @include medium {
+    .itemHeading {
+      font-size: 1.15rem;
+    }
+
+    svg {
+      min-width: 25px;
+      min-height: 25px;
+    }
+  }
+
+  &:last-of-type {
+    border: none;
+  }
+
+  &.opened {
+    animation: slideDown;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-direction: forward;
+    max-height: $maxHeight;
+  }
+
+  &.closed {
+    animation: slideUp;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-direction: forward;
+    max-height: $buttonHeight;
+  }
+}
+
+.itemButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $buttonHeight;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: $fontFamilySemiBold;
+  font-size: 1rem;
+
+  .itemHeading {
+    color: $dark-purple;
+    font-family:$fontFamilyBase;
+    text-align: left;
+  }
+  
+  svg {
+    margin-left: 1rem;
+
+    rect {
+      -webkit-transform-origin: center center;  /* Chrome, Safari */
+      transform-origin: center center;
+      fill: $dark-purple;
+    }
+  }
+
+  .icon {
+    .vertical {
+      transform: scaleY(1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .horizontal {
+      @extend %flex-row-align-center !optional;
+      justify-content: center;
+    }
+  }
+
+  &:hover {
+    .itemHeading {
+      color: $purple;
+    }
+
+    svg {
+      position: relative;
+
+      rect {
+        fill:  $purple;
+      }
+    }
+
+  }
+
+  &.active {
+    .itemHeading {
+      color: $purple;
+    }
+
+    svg {
+      position: relative;
+
+      rect {
+        fill:  $purple;
+      }
+    }
+
+    .itemIcon {
+      .vertical {
+        transform: scaleY(0);
+      }
+    }
+  }
+}
+
+.itemContent {
+  padding-bottom: 2rem;
+  font-family: $fontFamilyBase;
+
+  * {
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  p {
+    color: $dark-purple;
+  }
+
+  ol {
+    margin-left: 2rem;
+
+    li {
+      list-style: decimal;
+      margin-top: 0.5rem;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+
+    li {
+      margin-top: 0.5rem;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:before {
+        content: "\2022";
+        color: $dark-purple;
+        font-weight: bold; 
+        display: inline-block;
+        width: 1rem; 
+        margin-left: -1rem; 
+      }
+    }
+  }
+}
+
+.itemImage {
+  //margin-top: 1.5rem;
+
+  img {
+    //border-radius: 20px;
+  }
+}
+
+.cta {
+  margin-top: 1.5rem;
+
+  /* CTA Overrides */
+  & > div {
+    justify-content: flex-start;
+
+    button {
+      width: auto;
+      min-width: 175px;
+    }
+  }
+}
+
+.disclaimer {
+  margin-top: 2rem;
+  font-family: $fontFamilySemiBold;
+  color: $dark-purple;
+}
+
+//Animations
+@keyframes slideDown {
+  0% {
+    max-height: $buttonHeight;
+  }
+
+  100% {
+    max-height: $buttonHeight;
+  }
+
+  100% {
+    max-height: $maxHeight;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: $maxHeight;
+  }
+
+  100% {
+    max-height: $buttonHeight;
+  }
+}

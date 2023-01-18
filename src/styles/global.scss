@@ -1,0 +1,135 @@
+@use '../styles/abstracts' as *;
+
+@font-face {
+  font-family: 'FontAwesome Regular';
+  src: url('../static/fonts/fa-regular-400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontAwesome Solid';
+  src: url('../static/fonts/fa-solid-900.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reckless-SemiBold';
+  src: url('../static/fonts/RecklessNeue-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Reckless-Bold';
+  src: url('../static/fonts/RecklessNeue-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Effra-Regular';
+  src: url('../static/fonts/Effra-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Effra-Medium';
+  src: url('../static/fonts/Effra-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Effra-Bold';
+  src: url('../static/fonts/Effra-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $fontFamilyBase;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  position: relative;
+  height: 100%;
+  font-size: 16px; 
+}
+
+ul {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+h1, .h1, h2, .h2 {
+  font-weight: unset;
+  font-family: $fontFamilyTitle;
+  color: $dark-purple;
+}
+
+h1, .h1 {
+  font-size: 3.5rem;
+  line-height: 1.15;
+}
+
+h2, .h2 {
+  font-size: 3rem;
+}
+
+h3, .h3 {
+  font-weight: unset;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0 0 0.5em 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+input {
+  font-family: $fontFamilyBase;
+
+  &:focus {
+    //outline: none;
+  }
+}
+
+a {
+  &:focus {
+    outline-style: solid;
+    outline-color: $purple;
+    outline-width: 1px;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}

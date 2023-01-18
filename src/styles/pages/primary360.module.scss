@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.primaryCare {
+  .stats {
+    & > section {
+      & > article  {
+        padding: 2rem 0;
+      }
+    }
+  }
+}
+
+
+.disclaimer {
+  @extend %disclaimer;
+}

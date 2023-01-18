@@ -1,0 +1,264 @@
+@use '../../../styles/abstracts/' as *;
+@use '../accordion';
+
+$buttonHeight: 70px;
+$maxHeight: 715px;
+
+.accordionFaq {
+  
+  @include small {
+    padding: 4rem 1rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  @include large {
+    padding: 4rem 2rem;
+  }
+  
+  &.withImage {
+    @include small {
+      ul {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @include small {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.heading {
+  @include small {
+    text-align: center;
+    margin: 0 auto;
+    flex: 1;
+  }
+
+  @include medium {
+    margin: 0;
+    flex: 0.4 1;
+    text-align: left;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+  }
+
+  .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    line-height: 1.2;
+
+    @include small {
+      font-size: 1.75rem;
+    }
+
+    @include medium {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.list {
+  @include small {
+    flex: 1;
+    margin: 2rem auto 0;
+    width: 100%;
+  }
+
+  @include medium {
+    margin: 0;
+    flex: 0.7;
+  }
+}
+
+.item {
+  border-bottom: 2px solid $grey;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  //max-height: var(--buttonHeight);
+  text-align: left;
+  z-index: 5;
+
+  @include small {
+    .itemHeading {
+      font-size: 1rem;
+    }
+
+    svg {
+      min-width: 15px;
+      min-height: 15px;
+    }
+  }
+
+  @include medium {
+    .itemHeading {
+      font-size: 1.15rem;
+    }
+
+    svg {
+      min-width: 15px;
+      min-height: 15px;
+    }
+  }
+
+  &:last-of-type {
+    border: none;
+  }
+
+  &.opened {
+    animation: slideDown;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-direction: forward;
+    max-height: $maxHeight;
+  }
+
+  &.closed {
+    animation: slideUp;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-direction: forward;
+    max-height: $buttonHeight;
+  }
+}
+
+.itemButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $buttonHeight;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: $fontFamilySemiBold;
+  font-size: 1rem;
+
+  .itemHeading {
+    color: $dark-purple;
+    font-family:$fontFamilyBase;
+    text-align: left;
+  }
+  
+  svg {
+    margin-left: 1rem;
+
+    rect {
+      -webkit-transform-origin: center center;  /* Chrome, Safari */
+      transform-origin: center center;
+      fill: $dark-purple;
+    }
+  }
+
+  .itemIcon {
+    .vertical {
+      transform: scaleY(1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .horizontal {
+      @extend %flex-row-align-center;
+      justify-content: center;
+    }
+
+    &.opened {
+      .itemHeading {
+        color: $purple;
+      }
+  
+      svg {
+        position: relative;
+  
+        rect {
+          fill:  $purple;
+        }
+      }
+  
+      .rectangle {
+        &.vertical {
+          transform: scaleY(0);
+        }
+      }
+    }
+  }
+}
+
+.itemContent {
+  padding-bottom: 2rem;
+  font-family: $fontFamilyBase;
+  color: $dark-purple;
+  a {
+    color: $purple;
+    text-decoration: underline;
+    transition: color 0.3s;
+    
+    &:hover {
+      color: $dark-purple;
+    }
+  }
+}
+
+.itemImage {
+  //margin-top: 1.5rem;
+
+  img {
+    //border-radius: 20px;
+  }
+}
+
+.itemCta {
+  margin-top: 1rem;
+
+  & > div {
+    justify-content: flex-start;
+
+    button {
+      max-width: unset;
+    }
+  }
+}
+
+.cta {
+  margin-top: 1.5rem;
+
+  /* CTA Overrides */
+  & > div {
+    justify-content: flex-start;
+
+    button {
+      width: auto;
+      min-width: 175px;
+    }
+  }
+}
+
+.disclaimer {
+  a {
+    color: $purple;
+    text-decoration: underline;
+    transition: color 0.3s;
+    
+    &:hover {
+      color: $dark-purple;
+    }
+  }
+}

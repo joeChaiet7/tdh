@@ -1,0 +1,39 @@
+@mixin small {
+  @media screen and (min-width: 280px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 1028px) {
+    @content;
+  }
+}
+
+
+@mixin wide {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin duo {
+  @media (horizontal-viewport-segments: 2) and (min-width: 540px){
+    @content;
+  }
+}
+
+
+

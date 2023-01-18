@@ -1,0 +1,38 @@
+@use '../../../styles/abstracts/' as *;
+
+.mobileAuthNav {
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  opacity: 1;
+  bottom: -100px;
+  transition-property: bottom;
+  transition: 0.3s;
+  height: 86px;
+}
+
+.active {
+  bottom: 0;
+}
+
+.navList {
+  margin: 0;
+
+  li {
+    padding: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 350px;
+
+    a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 0.75rem 0.75rem 1rem;
+      font-size: 1.2rem;
+      font-family: $fontFamilyBase;
+    }
+  }
+}

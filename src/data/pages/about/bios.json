@@ -1,0 +1,197 @@
+[
+  {
+    "id": 0,
+    "active": true,
+    "slug": "jason-gorevic",
+    "name": "Jason Gorevic",
+    "role": "Chief Executive Officer",
+    "linkedIn": "https://www.linkedin.com/in/jasongorevic",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/jason-gorevic_transparent.png",
+      "alt": "Jason Gorevic, Chief Executive Officer"
+    },
+    "bio": "Jason Gorevic is chief executive officer and a member of Teladoc Health's board of directors. Since taking the reins in 2009, he has led Teladoc Health to its position today as the world leader in virtual care, achieving significant growth in revenue, membership, and telehealth utilization. Under his leadership the company has established a proven track record of successfully shaping the market and driving healthcare transformation by executing on the strategic vision, delivering award-winning innovation, and effectively integrating each corporate acquisition.\n\n Nationally recognized as a thought leader and trailblazer in the virtual delivery of healthcare, Mr. Gorevic is fueled by a passion for improving healthcare outcomes and providing universal access to care. His extensive career in healthcare began at Oxford Health, and he has also held executive leadership roles at WellPoint, Inc. (now Anthem, Inc.) and Empire BlueCross BlueShield.\n\nHe holds a Bachelor of Arts in International Relations from the University of Pennsylvania."
+  },
+  {
+    "id": 1,
+    "active": true,
+    "slug": "kelly-bliss",
+    "name": "Kelly Bliss",
+    "role": "President, U.S. Group Health",
+    "linkedIn": "https://www.linkedin.com/in/kellybliss",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/kelly-bliss_transparent.png",
+      "alt": "Kelly Bliss, President, U.S. Group Health"
+    },
+    "bio": "Kelly Bliss is president of U.S. Group Health. She oversees sales, client management, and client and commercial operations for the business.\n\n Ms. Bliss has strong expertise in creating cohesive client-focused organizations. Most recently, she held the position of chief client officer at Teladoc Health. Under her leadership, client services achieved record growth and retention through a focus on delivering value and a best-in-class experience to our clients. Ms. Bliss also built and managed high-functioning, global teams at companies such as Best Doctors and InterSystems. At Best Doctors, she served as chief of staff, leading the organization's key strategic growth initiatives until the eventual acquisition by Teladoc Health in 2017.\n\n Ms. Bliss was recognized as one of the Top 25 Women Leaders in Healthcare Software of 2020 by The Healthcare Technology Report and serves as executive sponsor for the Teladoc Health Women's Network. She holds a bachelor's degree in industrial psychology from Nichols College."
+  },
+  {
+    "id": 2,
+    "active": true,
+    "slug": "arnnon-geshuri",
+    "name": "Arnnon Geshuri",
+    "role": "Chief People Officer",
+    "linkedIn": "https://www.linkedin.com/in/arnnongeshuri/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/arnnon-geshuri_transparent.png",
+      "alt": "Arnnon Geshuri, Chief People Officer"
+    },
+    "bio": "Arnnon Geshuri is responsible for developing organizational talent at scale for Teladoc Health. Aligning the company's culture and long-term vision, he oversees all human resources functions, including talent acquisition, learning and development, benefits and compensation, workplace, and diversity equity and inclusion.\n\n Mr. Geshuri previously served as chief people officer at Livongo Health until its merger with Teladoc Health. Prior to Livongo, he was vice president of Human Resources at Tesla, and during his tenure, oversaw the growth of Tesla from a 400-person startup to an integrated sustainable energy company with more than 35,000 employees around the globe. Before Tesla, Mr. Geshuri was the senior director of staffing operations for Google and designed the company's legendary recruitment organization and talent acquisition strategy. He has also held leadership roles at E*TRADE Financial and Applied Materials.\n\n Mr. Geshuri sits on several startup and academic advisory boards, including the Santa Clara University Leavey School of Business Master of Science in Business Analytics program. Mr. Geshuri has a bachelor's degree in psychology from the University of California at Irvine and a master's in industrial/organizational psychology from San José State University."
+  },
+  {
+    "id": 3,
+    "active": true,
+    "slug": "claus-jensen",
+    "name": "Claus Jensen, PhD",
+    "role": "Chief Innovation Officer",
+    "linkedIn": "https://www.linkedin.com/in/claustorpjensen/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/claus-jensen_transparent.png",
+      "alt": "Claus Jensen, PhD, Chief Innovation Officer"
+    },
+    "bio": "Claus Jensen leads technology and innovation at Teladoc Health. Under his direction, the research and development team applies product innovation, data science, technological expertise and clinical excellence to transform how people access and experience healthcare around the world.\n\n Dr. Jensen brings 20 years of experience leading digital transformation at enterprise healthcare and technology organizations. Prior to Teladoc Health, Dr. Jensen served as chief digital and technology officer at the Memorial Sloan Kettering (MSK) cancer center, where he oversaw the integration of data and technology resources that enabled MSK to meet critical care and research objectives. Previously, he was chief technology officer of CVS Health-Aetna, and also held leadership roles at Danske Bank and IBM.\n\n Dr. Jensen holds a bachelor's degree in mathematics and a PhD in computer science from Aarhus University, Denmark. He has authored numerous publications and holds 14 patents covering integration, APIs and transformation."
+  },
+  {
+    "id": 4,
+    "active": true,
+    "slug": "laizer-kornwasser",
+    "name": "Laizer Kornwasser",
+    "role": "President, Enterprise Growth and Global Markets",
+    "linkedIn": "https://www.linkedin.com/in/laizer-kornwasser-b46113/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/laizer-kornwasser_transparent.png",
+      "alt": "Laizer Kornwasser, President, Enterprise Growth and Global Markets"
+    },
+    "bio": "Lazier Kornwasser is president, enterprise growth and global markets. He oversees company performance across client channels and product lines.\n\n For two decades Kornwasser has led business transformation and been at the forefront of operational excellence for diverse, high growth health care companies. Prior to joining Teladoc Health, Mr. Kornwasser served as president and COO of CareCentrix, where he was responsible for driving operational excellence and business strategy. Prior to that, Kornwasser held leadership roles at health care companies including Medco Health Solutions.\n\n Mr. Kornwasser earned a Master of Business Administration from Harvard Business School and a Bachelor of Science from Yeshiva University where he is now a professor."
+  },
+  {
+    "id": 5,
+    "active": true,
+    "slug": "alon-matas",
+    "name": "Alon Matas",
+    "role": "President, BetterHelp",
+    "linkedIn": "https://www.linkedin.com/in/alonmatas/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/alon-matas_transparent.png",
+      "alt": "Alon Matas, President, BetterHelp"
+    },
+    "bio": "Alon Matas is the president of BetterHelp, the direct-to-consumer mental health service by Teladoc Health. He is responsible for strategic direction, business growth, service operations, partnerships and product development.\n\n Mr. Matas brings 20 years of experience in starting and scaling consumer ventures that touch the lives of millions of people around the globe. He founded BetterHelp after realizing how connecting with a professional therapist can be difficult, expensive and inaccessible. Under his direction, BetterHelp has grown to become the world's largest online counseling platform.\n\n Mr. Matas joined Teladoc Health with the BetterHelp acquisition in 2015. Prior to founding BetterHelp, he founded MemoryOf and Billy.com. Before embarking on his entrepreneurial career, Mr. Matas was leading product development and strategy for startups, enterprises and the Israeli Defense Forces. He is also an advocate for the integration of people with special needs in technology companies."
+  },
+  {
+    "id": 6,
+    "active": true,
+    "slug": "mala-murthy",
+    "name": "Mala Murthy",
+    "role": "Chief Financial Officer",
+    "linkedIn": "https://www.linkedin.com/in/mala-murthy-394a3b10/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/mala-murthy_transparent.png",
+      "alt": "Mala Murthy, Chief Financial Officer"
+    },
+    "bio": "Mala Murthy leads Teladoc Health's global finance organization, including accounting, financial planning & analysis (FP&A) and investor relations. With a focus on assuring shareholder value, Ms. Murthy is a seasoned leader with a proven track record of driving balanced top-and-bottom-line growth.\n\n She brings a passion for developing & implementing strategies that drive both short-term and long-term value, acquired from extensive financial management experience in diverse industries. Ms. Murthy has successfully supported substantial acquisitions and overseen the development of capital structure and liquidity strategies.\n\n Prior to joining Teladoc Health she held several senior executive positions at American Express, most recently as chief financial officer of the Global Commercial Services segment. There she led strategic investment decisions and P+L stewardship for the segment. She also previously served in various leadership positions with Pepsico, leading high growth business units.\n\n Ms. Murthy holds a bachelor's degree in computer science and engineering from Jadavpur University in India, an MBA from the India Institute of Management, and a master's degree in public and private management from Yale School of Management."
+  },
+  {
+    "id": 7,
+    "active": true,
+    "slug": "carlos-nueno",
+    "name": "Carlos Nueno",
+    "role": "President, International",
+    "linkedIn": "https://www.linkedin.com/in/carlos-nueno-47b698107/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/carlos-nueno_transparent.png",
+      "alt": "Carlos Nueno, President, International"
+    },
+    "bio": "Carlos Nueno is president of international operations for Teladoc Health. He is responsible for the strategic direction, operations and client management for the company's global footprint.\n\n Bringing more than 20 years of global healthcare leadership experience, Mr. Nueno was co-founder and CEO of Advance Medical, the leading provider of global health services to corporations and insurance companies worldwide. Under his direction, Advance Medical grew to more than 900 employees across North America, Europe and Asia until its eventual acquisition by Teladoc Health in 2018. Prior to co-founding Advance Medical, Mr. Nueno was a consultant for Gemini Consulting.\n\n Mr. Nueno graduated from Polytechnic University of Catalonia (UPC) in Barcelona, Spain, with a concentration in industrial and mechanical engineering and holds an MBA from IESE Business School."
+  },
+  {
+    "id": 8,
+    "active": true,
+    "slug": "andy-puterbaugh",
+    "name": "Andy Puterbaugh",
+    "role": "President, Hospital and Health Systems",
+    "linkedIn": "https://www.linkedin.com/in/andy-puterbaugh-897377235/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/andy-puterbaugh_transparent.png",
+      "alt": "Andy Puterbaugh, President, Hospital and Health Systems"
+    },
+    "bio": "Andy Puterbaugh leads the Hospital and Health System business for Teladoc Health. He has served in public and private healthcare companies for nearly 40 years including experience in telehealth, medical devices, physician services, information technology and EMS.\n\n In 2020, he retired from Teladoc Health post-acquisition of InTouch Health. While at Teladoc Health, Mr. Puterbaugh served as General Manager, HHS North America and was previously EVP, General Manager for InTouch Health since 2008. He is returning to the Teladoc family and excited to serve with a team of healthcare professionals who are committed to making a true, positive impact in the world.\n\n He serves as a Board Member of his local church and on Advisory Boards to many philanthropic organizations both locally, and around the world. His family mantra is “Choose Joy” believing that we make intentional choices every day to shine a positive countenance and delight in life."
+  },
+  {
+    "id": 9,
+    "active": true,
+    "slug": "vidya-raman-tangella",
+    "name": "Vidya Raman-Tangella",
+    "role": "Chief Medical Officer",
+    "linkedIn": "https://www.linkedin.com/in/vidyart/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/vidya-raman-tangella_transparent.png",
+      "alt": "Vidya Raman-Tangella, Chief Medical Officer"
+    },
+    "bio": "Dr. Vidya Raman-Tangella is responsible for leading our clinical vision, working cross-functionally to improve health outcomes for our members, and ensuring we deliver the best-possible quality care when and where it's needed.\n\n Prior to joining Teladoc Health, Dr. Raman-Tangella served as general manager of healthcare and life sciences solutions at Amazon subsidiary, Amazon Web Services (AWS). At AWS, she led the strategy and vision for healthcare solutions and helped establish a formal function to develop a portfolio of technology and data-driven solutions for the healthcare ecosystem. Prior to that, Dr. Raman-Tangella held leadership roles at healthcare companies including Blue Cross Blue Shield, Johnson & Johnson, and United Healthcare, where she led the design of integrated health and wellness solutions for employers and healthcare plans.\n\n Dr. Raman-Tangella earned a Master of Health Administration degree from Cornell University and a Bachelor of Medicine, Bachelor of Surgery, MBBS degree from Osmania University in Hyderabad, one of India's leading medical schools. She's a sought-after speaker and was named a “Woman Worth Watching” by Profiles in Diversity Journal, and a “Top 40 Healthcare Transformer” by Medical & Marketing Media."
+  },
+  {
+    "id": 10,
+    "active": true,
+    "slug": "dan-trencher",
+    "name": "Dan Trencher",
+    "role": "Senior Vice President, Corporate Strategy",
+    "linkedIn": "https://www.linkedin.com/in/daniel-trencher-0600386",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/dan-trencher_transparent.png",
+      "alt": "Dan Trencher, Senior Vice President, Corporate Strategy"
+    },
+    "bio": "Dan Trencher leads corporate strategy for Teladoc Health and is responsible for developing the organization's long-term strategic vision. Under his direction, his team ensures the alignment of short-and long-range plans, strategic investment roadmaps and channel-level strategies and objectives. Previously, Mr. Trencher led product and strategy for Teladoc Health, ensuring the delivery of innovative commercial products and market-leading experiences.\n\n Mr. Trencher brings a breadth of experience in the healthcare industry, including hands-on product and operational expertise from a wide array of healthcare customer segments. Prior to Teladoc Health, Mr. Trencher held leadership roles at WellPoint (now Anthem, Inc.) and WellChoice, Inc., developing and managing growth initiatives across the healthcare value chain, ranging from providers to disease management and wellness programs to health information technology.\n\n Mr. Trencher holds a bachelor's degree in economics from the University of Pennsylvania and a Master of Business Administration degree from the University of Chicago."
+  },
+  {
+    "id": 11,
+    "active": true,
+    "slug": "andrew-turitz",
+    "name": "Andrew Turitz",
+    "role": "Senior Vice President of Corporate Development",
+    "linkedIn": "https://www.linkedin.com/in/drewturitz",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/andrew-turitz_transparent.png",
+      "alt": "Andrew Turitz, Senior Vice President of Corporate Development"
+    },
+    "bio": "Andrew (Drew) Turitz is responsible for identifying, evaluating, and executing growth opportunities for Teladoc Health through partnerships, acquisitions, joint ventures, and other third-party relationships.\n\n Mr. Turitz has extensive experience in global healthcare M&A and partnerships, including the management of all phases of analysis, diligence, and transaction structuring to product integration, go-to-market strategies, and operational implementation. Prior to Teladoc Health, he held senior roles at Aetna, Sandbox Industries, and Bank of America. Mr. Turitz has advised on M&A transactions for Fortune 500 companies, and led investments in and served on the board of directors for venture-backed companies. He is also an entrepreneur who has launched and joined numerous early-stage businesses.\n\n Mr. Turitz holds a bachelor's degree from Stanford University and a Master of Business Administration from the Kellogg School of Management at Northwestern University."
+  },
+  {
+    "id": 12,
+    "active": true,
+    "slug": "adam-vandervoort",
+    "name": "Adam Vandervoort",
+    "role": "Chief Legal Officer",
+    "linkedIn": "https://www.linkedin.com/in/adam-vandervoort-45b1931",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/adam-vandervoort_transparent.png",
+      "alt": "Adam Vandervoort, Chief Legal Officer"
+    },
+    "bio": "Adam Vandervoort helps Teladoc Health comply with applicable laws and serves as secretary to its board of directors. He is responsible for all of the company's legal matters, including government affairs, corporate governance, securities law, intellectual property, and privacy.\n\n Prior to joining Teladoc Health, Mr. Vandervoort spent more than eight years as general counsel to Independence Holding Company, a publicly traded insurance holding company. Previously, he was an in-house lawyer with the FedEx Corporation and practiced law with the firm of Sullivan & Cromwell LLP.\n\n Mr. Vandervoort holds a J.D. degree from the University of Pennsylvania Law School, AM and AB degrees from the University of Chicago and is admitted to practice law in the states of California, Connecticut, and New York. He has served on the Municipal Board of Ethics for the city of Stamford, Connecticut, where he and his family reside."
+  },
+  {
+    "id": 13,
+    "active": true,
+    "slug": "stephany-verstraete",
+    "name": "Stephany Verstraete",
+    "role": "Chief Marketing & Engagement Officer",
+    "linkedIn": "https://www.linkedin.com/in/stephanyverstaete",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/stephany-verstraete_transparent.png",
+      "alt": "Stephany Verstraete, Chief Marketing & Engagement Officer"
+    },
+    "bio": "Stephany Verstraete leads Teladoc Health's global marketing and communications efforts, driving the growth of member adoption and utilization through best-in-class channel engagement strategies and consumer relationship management. She is also responsible for the market positioning of Teladoc Health's brand and growing the product portfolio.\n\n Ms. Verstraete's career has been dedicated to driving consumer behavior change in new and emerging industries, with a proven track record of building digital brands and growing high-performing global teams. She has held marketing leadership roles at high-profile brands including Match.com, Expedia, Kraft, and Frito-Lay. Her transition to the healthcare industry came when she served as chief marketing officer at Truveris.\n\n Ms. Verstraete holds an International Master of Business Administration from York University and an Honors Bachelor of Economics from Queen's University in Canada."
+  },
+  {
+    "id": 14,
+    "active": true,
+    "slug": "mike-waters",
+    "name": "Mike Waters",
+    "role": "Chief Operating Officer",
+    "linkedIn": "https://www.linkedin.com/in/mike-waters-mha-b1162630/",
+    "image": {
+      "url": "https://s3.amazonaws.com/images.teladoc.com/teladoc-health-next/leadership/transparent/mike-waters_transparent.png",
+      "alt": "Mike Waters, Chief Operating Officer"
+    },
+    "bio": "Mike Waters is responsible for our portfolio of strategic services and solutions, ensuring we have the proper infrastructure, systems, metrics and teams to effectively grow our business and delivering on our strategic objectives to support a seamless, efficient customer experience.\n\n Prior to joining Teladoc Health, Mr. Waters served as EVP and chief executive of the Ambulatory Care Network at Providence. At Providence, was responsible for leading the overall strategy and execution of the Ambulatory Care Network, improving the health and well-being of patients by creating personalized, convenient, affordable health solutions outside of the system's hospital walls. Prior to that, Waters created and led two nationwide health system consulting and recruiting companies, W Medical Group and Med Stat Incorporated.\n\n Mr. Waters earned a Master of Healthcare Administration from the University of Washington and a Bachelor of Arts Communications from Southern Methodist University. He serves on the boards of Active Wellness, Patient One and Health Management Resources."
+  }
+]

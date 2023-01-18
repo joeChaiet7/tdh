@@ -1,0 +1,72 @@
+@use '../../../styles/abstracts/' as *;
+
+$fontSize: 1.25rem;
+
+.secondaryCta {
+  display: flex;
+  justify-content: center;
+  max-width: $layoutWidth;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  flex-wrap: wrap;
+
+  @include small {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: flex-end;
+  font-size: calc($fontSize + 0.5rem);
+  color: $dark-purple;
+  margin-bottom: 0.25rem;
+
+  @include small {
+    font-size: calc($fontSize + 1rem);
+
+  }
+
+  @include medium {
+    font-size: calc($fontSize + 0.5rem);
+  }
+}
+
+.text {
+  font-size: $fontSize;
+  font-family: $fontFamilySemiBold;
+  color: $dark-purple;
+  text-align: center;
+}
+
+.link {
+  a, button {
+    @extend %flex-row-align-center;
+    color: $purple;
+    font-size: $fontSize;
+    font-family: $fontFamilySemiBold;
+    transition: color 0.3s;
+
+    svg {
+      margin-left: 0.5rem;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: $dark-purple;
+      text-decoration: underline;
+
+      svg {
+        transform: translateX(3px);
+      }
+    }
+  }
+}

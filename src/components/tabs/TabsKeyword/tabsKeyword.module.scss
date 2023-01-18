@@ -1,0 +1,161 @@
+@use '../../../styles/abstracts/' as *;
+
+$titleWidth: var(--titleWidth);
+
+.tabsKeyword {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.heading {
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.title {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  font-family: $fontFamilyTitle;
+  font-size: 2.5rem;
+  color: $dark-purple;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  div {
+    color: $dark-purple;
+    flex: 1 auto;
+  }
+
+  span {
+    text-transform: lowercase;
+    transition: color 0.3s;
+
+    &.active {
+      color: $purple;
+    }
+  }
+
+  .highlight {
+    width: $titleWidth;
+    transition: width 0.6s;
+    margin-left: 0.75rem;
+
+    span {
+      text-transform: lowercase;
+      color: $purple;
+      white-space: nowrap;
+      animation: fadeUp 0.6s;
+    }
+  }
+}
+
+.list {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+
+  button {
+    @extend %flex-column-align-center;
+    font-size: 2rem;
+    color: $dark-purple;
+    transition: color 0.3s;
+    width: 150px;
+    flex-basis: 150px;
+
+    .buttonIcon {
+      @extend %flex-row-align-center;
+      justify-content: center;
+      width: 40px;
+      height: 50px;
+    }
+
+    .buttonTitle {
+      font-size: 1rem;
+      font-family: $fontFamilySemiBold;
+    }
+
+    svg path {
+      fill: $dark-purple;
+      transition: fill 0.3s;
+    }
+
+    &:hover, &.active {
+      color: $purple;
+
+      svg path {
+        fill: $purple;
+      }
+    }
+  }
+}
+
+.description {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  border-radius: 40px;
+  background-color: $grey;
+  position: relative;
+
+  div {
+    animation: fadeUp 0.6s;
+    color: $dark-purple;
+    font-family: $fontFamilyBase;
+    text-align: center;
+  }
+}
+
+$indicatorInitialLocation: var(--indicatorInitialLocation);
+$indicatorWidth: var(--indicatorWidth);
+$indicatorColor: var(--indicatorColor);
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  left: $indicatorInitialLocation;
+  margin: 0;
+  background-color: $purple;
+  transition-property: left, width, opacity, background-color;
+  transition-duration: 0.3s;
+  z-index: 4;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    border: 11px solid transparent;
+    border-bottom-color: $grey;
+  }
+}
+
+.mobile {
+  border: none;
+  padding: 0 1rem;
+
+  ul {
+    flex-direction: column;
+  }
+  
+  @include small {
+    display: flex;
+  }
+
+  @include medium {
+    display: none;
+  }
+}
+
+.desktop {
+  @include small {
+    display: none;
+  }
+
+  @include medium {
+    display: unset;
+  }
+}

@@ -1,0 +1,162 @@
+@use '../../../styles/abstracts/' as *;
+
+.siteHeaderLocation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include small {
+    button > div {
+      padding: 0.75rem 0.5rem;
+    }
+  }
+
+  @include large {
+    button > div {
+      padding: 0
+    }
+  }
+
+  button {
+    @extend %flex-row-align-center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    & > div {
+      @extend %flex-row-align-center;
+    }
+  }
+}
+
+.iconContainer {
+  @extend %flex-row-align-center;
+  flex: 0 0 auto;
+  width: 25px;
+
+  svg {
+    margin-right: 0.15rem;
+    font-size: 1.25rem;
+    color: $purple;
+   
+    @include small {
+      color: #607487;
+    }
+
+    @include medium {
+      color: $purple;
+    }
+  }
+
+
+}
+
+.label {
+  display: flex;
+  align-items: center;
+
+  @include small {
+    display: flex;
+    align-items: center;
+  }
+
+  @include large {
+    display: none;
+  }
+
+  p {
+    font-family: $fontFamilySemiBold;
+    color: #607487;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+
+.active {
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+  text-align: right;
+
+  font-family: $fontFamilyBase;
+  font-size: 1rem;
+
+  @include small {
+    color: $purple;
+  }
+
+  @include medium {
+    color: $dark-purple;
+  }
+}
+
+.chevron {
+  margin-left: $iconSpacing;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+
+  &.opened {
+    transform: rotate(-180deg);
+  }
+  
+  &.closed {
+    transform: rotate(0);
+  }
+}
+
+.select {
+  display: inline-block;
+  transition: max-height 0.5s ease, top 0.3s;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 0;
+
+  @include small {
+    width: 100%;
+    position: relative;
+    top: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  @include large {
+    width: 150px;
+    position: fixed;
+    top: $navHeight;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(101, 108, 116, 0.1);
+  }
+
+  &.opened {
+    max-height: 300px;
+  }
+
+  &.closed {
+    max-height: 0;
+  }
+}
+
+.item {
+  display: block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin: 0.25rem 0.5rem;
+  color: $dark-purple;
+  font-size: 1rem;
+  font-family: $fontFamilyBase;
+  font-weight: 400;
+  text-decoration: none;
+
+  &:last-of-type {
+    margin-bottom: 0.5rem;
+  }
+
+  &:hover {
+    background-color: $grey;
+    color: $purple;
+  }
+}

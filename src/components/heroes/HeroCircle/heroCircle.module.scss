@@ -1,0 +1,176 @@
+@use '../../../styles/abstracts' as *;
+
+.heroCircle {
+  position: relative;
+
+  @include small {
+    overflow: hidden;
+    height: unset;
+  }
+
+  @include medium {
+    height: 70vh;
+    min-height: 700px;
+    max-height: 705px;
+  }
+
+  @include wide {
+    height: 80vh;
+  }
+
+  @include landscape {
+    height: 660px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $layoutWidth;
+  flex: 1;
+
+  @include small {
+    /*display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;*/
+    height: 100%;
+  }
+
+  @include medium {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    height: 100%;
+  }
+}
+
+
+.image {
+  @extend %flex-row-align-center;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  @include small {
+    position: relative;
+    height: 85vw;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  @include medium {
+    position: unset;
+    justify-content: flex-end;
+    align-items: center;
+    order: 2;
+    height: 100%;
+  }
+}
+
+.imageShape {
+  background-repeat: no-repeat;
+  flex: 1 1;
+  
+  max-width: 725px;
+  max-height: 725px;
+
+  @include small {
+    position: absolute;
+    top: 0;
+    right: unset;
+    //min-width: 450px;
+    //min-height: 400px;
+    width: 100vw;
+    height: 85vw;
+    background-size: 120%;
+    background-position: 50% 40%;
+    border-radius: 0 0 100% 100%;
+  }
+
+  @include medium {
+    right: -2rem;
+    top: -3rem;
+    width: 52vw;
+    height: 52vw;
+    background-position: 50% 35%;
+    border-radius: 50% 0 50% 50%;
+  }
+
+  @include large {
+    width: 52vw;
+    height: 52vw;
+  }
+}
+
+.content {
+  flex: 1;
+
+  @include small {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  @include medium {
+    flex: 1;
+    text-align: left;
+    padding: 0 2rem;
+    margin-top: 5vw;
+  }
+
+  @include large {
+    margin-top: unset;
+  }
+
+  @include wide {
+    padding: 0 0 0 2rem;
+  }
+
+  h1, .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+
+    @include small {
+      font-size: 2.25rem;
+    }
+
+    @include medium {
+      font-size: 3rem;
+    }
+
+    @include large {
+      font-size: 3.5rem;
+    }
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    margin-bottom: 0;
+    color: $dark-purple;
+
+    @include small {
+      margin-top: 1rem;
+    }
+
+    @include medium {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.cta {
+  @include small {
+    margin-top: 1rem;
+  }
+
+  @include medium {
+    margin-top: 2rem;
+  }
+
+  /* CTA Overrides */
+  > div {
+    justify-content: flex-start;
+  }
+}

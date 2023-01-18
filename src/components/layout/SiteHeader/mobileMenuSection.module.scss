@@ -1,0 +1,93 @@
+@use '../../../styles/abstracts/' as *;
+
+.mobileMenuSection {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.link {
+  color: #607487;
+  font-size: 1rem;
+  font-family: $fontFamilySemiBold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex: 1;
+  cursor: pointer;
+}
+
+.linkContainer {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subLinkContainer {
+  display: block;
+  width: 100%;
+  margin-left: 0.5rem;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out, margin-top 0.3s linear;
+  border-left: 2px solid #e0e4ea;
+  
+  .link {
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    margin-left: 1rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    width: calc(100% - 1.5rem); //Width of container minus margin-left of container
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover, &.active {
+      background-color: $grey;
+      color: $black;
+    }
+  }
+}
+
+.active {
+  .linkTitle, svg {
+    color: $dark-purple;
+  }
+}
+
+.linkTitle {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+
+  p {
+    margin: 0;
+    line-height: unset;
+  }
+
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
+.iconContainer {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease-in-out;
+
+  &.opened {
+    transform: rotate(-180deg);
+  }
+
+  &.closed {
+    transform: rotate(0);
+  }
+  
+  svg {
+    font-size: 1.2rem;
+  }
+}

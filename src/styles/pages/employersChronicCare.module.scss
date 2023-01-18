@@ -1,0 +1,20 @@
+@use '../abstracts/' as *;
+
+.employersChronicCare {
+  .stats, .slider {
+    & > section {
+      & > article  {
+        padding: 2rem 0;
+      }
+    }
+  }
+
+  .slider {
+    position: relative;
+    top: -2px;
+  }
+
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

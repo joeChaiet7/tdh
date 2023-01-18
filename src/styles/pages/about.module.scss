@@ -1,0 +1,116 @@
+@use '../abstracts/' as *;
+
+.about {
+  .teasers {
+    article {
+  
+      @include small {
+        gap: 3rem;
+      }
+  
+      @include medium {
+        gap: 10rem;
+      }
+  
+      div {
+        flex: 0.5;
+  
+        &:nth-of-type(2){
+          flex: 0.4;
+        }
+      }
+    }
+  }
+  
+  .values {
+    position: relative;
+    top: 10rem;
+    margin-top: -10rem;  
+    z-index: 2;
+  
+    div {
+      & > section {
+        padding: 0;
+      }
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+  
+    ul {
+      margin-left: 0;
+      
+      li {
+        padding: 0;
+  
+        @include small {
+          text-align: center;
+        }
+  
+        @include large {
+          text-align: left;
+        }
+      }
+    }
+  
+    img {
+      @include small {
+        position: relative;
+      }
+  
+      @include large {
+        //position: absolute;
+        //top: -3rem;
+        //width: 125%;
+        max-width: unset;
+       //left: -10rem;
+      }
+    }
+  
+    & > div section > section {
+      @include large {
+        padding: 0 2rem;
+  
+      }
+  
+      article div:nth-child(2) {
+  
+        @include small {
+          max-height: unset;
+        }
+  
+        @include medium {
+          max-height: 410px;
+        }
+      }
+    }
+  }
+  
+  .stats {
+    position: relative;
+    z-index: 0;
+    
+    & > div  {
+      & > section {
+        padding-top: 12rem; //Add padding to the component within the WaveBackground
+      }
+    }
+  }
+  
+  .awards {
+    padding: 5rem 0;
+  
+    .cta {
+      @include small {
+        padding: 0 1rem;
+      }
+    
+      @include medium {
+        padding: 0;
+      }
+      
+    }
+  }
+}

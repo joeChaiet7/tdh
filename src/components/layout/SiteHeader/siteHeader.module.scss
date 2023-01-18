@@ -1,0 +1,321 @@
+@use '../../../styles/abstracts/' as *;
+
+$menuHeight: 325px;
+
+.siteHeader {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  //box-shadow: 0 0 20px 3px rgba(101, 108, 116, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s, top 0.3s;
+
+  &.hide {
+    top: -100px;
+  }
+
+  &.show {
+    top: 0;
+  }
+}
+
+.mobileMenuOpen {
+  .circle {
+    transform: scale(350);
+    top: 0;
+    right: 0;
+    transition-duration: 1s;
+  }
+
+  .container {
+    box-shadow: none;
+  }
+}
+
+.circle {
+  z-index: -1;
+  background-color: $white;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: -12px;
+  transition-duration: 1s;
+  transform: scale(1);
+}
+
+.transparent {
+  //background-color: transparent;
+  //box-shadow: none !important;
+
+  & > .container {
+    //background-color: transparent;
+  }
+}
+
+.container {
+  overflow: hidden;
+  background-color: $white;
+  max-width: $layoutWidth;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 3px $shadow;
+  transition: background-color 0.3s;
+
+  &.dropdownOpen {
+    height: calc($menuHeight + $navHeight);
+  }
+
+  &.dropdownClosed {
+    height: $navHeight;
+  }
+
+  &.noShadow {
+    box-shadow: none;
+  }
+
+  @include small {
+    margin: 0.5rem 0.5rem 0;
+  }
+
+  @include wide {
+    margin: 0.5rem auto 0;
+  }
+}
+
+.inner {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  height: $navHeight;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include small {
+    padding: 0 1rem;
+  }
+}
+
+.primary {
+  @extend %flex-row-align-center;
+  position: relative;
+  height: 100%;
+
+  @include medium {
+    width: 100%;
+  }
+
+  @include large {
+    width: unset;
+  }
+}
+
+.secondary {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-size: 0;
+  display: block;
+
+  img {
+    max-width: 115px;
+    min-width: 100px;
+  }
+
+  @include small {
+    flex: 1;
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(50% - 65px); //Minus half of img width
+
+    img {
+      max-width: 120px;
+    }
+  }
+}
+
+.locationContainer {
+  @include small {
+    max-width: 550px;
+    margin: 0 auto;
+    border-top: 1px solid #f2f2f2;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  @include large {
+    border: none;
+    padding-top: 0;
+  }
+
+  select {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    font-family: $fontFamilyBase;
+    font-size: 1rem;
+    color: $dark-purple;
+    cursor: pointer;
+    transition: color 0.3s cubic-bezier(0.215,0.61,0.355,1);
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    //background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolyline points='1 6 11 16 21 6' fill='none' stroke-linecap='round' stroke-width='3' stroke='%23331f65' %3E%3C/polyline%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+  
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+
+.authNav {
+  ul {
+    @extend %flex-row-align-center;
+    justify-content: flex-end;
+  }
+}
+
+.authNavList {
+  margin: 0
+}
+
+#login {
+  a {
+    background-color: $white;
+    color: $dark-purple;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    font-family: $fontFamilyBase;
+
+    svg {
+      margin-right: $iconSpacing;
+      margin-left: 0;
+      font-size: 1.25rem;
+      color: $purple;
+    }
+
+    &:hover {
+      background-color: $dark-purple;
+      color: $white;
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+}
+
+#register {
+  margin-left: 0.5rem;
+
+  @include small {
+    display: none;
+  }
+
+  @include large {
+    display: flex
+  }
+}
+
+.searchContainer {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  margin-left: 0.25rem;
+
+  @include small {
+    display: none;
+  }
+
+  @include large {
+    display: flex;
+  }
+
+  button {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    background: transparent;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    color: $dark-purple;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    &:hover {
+      color: $purple;
+      background-color: $grey;
+    }
+  }
+}
+
+.mobileMenuHeader {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  height: $navHeight;
+  z-index: 25;
+
+  nav {
+    z-index: 6;
+  }
+
+  .SearchBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  @include small {
+    display: flex;
+    padding: 0 0 0 0.25rem;
+  }
+
+  @include medium {
+    width: 100%;
+  }
+
+  @include large {
+    display: none;
+  }
+}
+
+.desktop {
+  @include small {
+    display: none;
+  }
+
+  @include large {
+    display: flex;
+  }
+}
+
+.mobile {
+  @include small {
+    display: flex;
+  }
+
+  @include large {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}

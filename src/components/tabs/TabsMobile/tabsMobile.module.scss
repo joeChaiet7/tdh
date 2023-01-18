@@ -1,0 +1,160 @@
+@use '../../../styles/abstracts/' as *;
+
+$buttonHeight: 65px;
+$maxHeight: 715px;
+
+.tabsMobile {
+  flex-direction: column !important;
+}
+
+.listItem {
+  border-bottom: 2px solid $grey;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  max-height: $buttonHeight;
+
+  &:last-of-type {
+    border: none;
+  }
+
+  &.opened {
+    animation: slideDown;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-direction: forward;
+    max-height: $maxHeight;
+  }
+
+  &.closed {
+    animation: slideUp;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-direction: forward;
+    max-height: $buttonHeight;
+  }
+
+  .button {
+    @extend %flex-row-align-center;
+    justify-content: space-between;
+    height: $buttonHeight;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: $fontFamilySemiBold;
+  }
+
+  .title {
+    @extend %flex-row-align-center;
+    color: $dark-purple;
+    font-family: $fontFamilyBase;
+    font-size: 1.25rem;
+
+    svg {
+      display: inline-block;
+      width: 30px;
+      height: 25px;
+      margin-right: 1rem;
+      padding: 0;
+    }
+  }
+
+  svg {
+    rect {
+      -webkit-transform-origin: center center;  /* Chrome, Safari */
+      transform-origin: center center;
+      fill: $dark-purple;
+    }
+  }
+
+  .itemIcon{
+    .vertical {
+      transform: scaleY(1);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .horizontal {
+      @extend %flex-row-align-center;
+      justify-content: center;
+    }
+  }
+
+  
+  
+  .active {
+    .title {
+      color: $purple;
+    }
+
+    svg {
+      position: relative;
+
+      rect {
+        fill: $purple;
+      }
+    }
+
+    .rectangle {
+      &.vertical {
+        transform: scaleY(0);
+      }
+    }
+  }
+
+  .content {
+    padding-bottom: 2rem;
+    
+    p {
+      font-family: $fontFamilyBase;
+      color: $dark-purple;
+    }
+  }
+
+  .image {
+    margin-top: 1.5rem;
+
+    img {
+      border-radius: 20px;
+    }
+  }
+
+  .cta {
+    margin-top: 1.5rem;
+
+    /* CTA Overrides */
+    & > div {
+      align-items: flex-start;
+
+      button {
+        width: 100%;
+        min-width: 175px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+//Animations
+@keyframes slideDown {
+  0% {
+    max-height: $buttonHeight;
+  }
+
+  100% {
+    max-height: $buttonHeight;
+  }
+
+  100% {
+    max-height: $maxHeight;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: $maxHeight;
+  }
+
+  100% {
+    max-height: $buttonHeight;
+  }
+}

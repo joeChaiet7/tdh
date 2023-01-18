@@ -1,0 +1,44 @@
+@use '../../../styles/abstracts/' as *;
+
+.callToAction {
+  display: flex;
+  align-items: center;
+  //margin-top: 1rem;
+
+  @include small {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  @include medium {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    width: unset;
+  }
+}
+
+.title {
+  max-width: 520px;
+  margin: 0 auto 1rem;
+  text-align: center;
+  font-family: $fontFamilyTitle;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: $dark-purple;
+}
+
+.ctaText {
+  font-family: $fontFamilySemiBold;
+  text-align: center;
+  
+  &.white {
+    color: $white;
+  }
+
+  svg {
+    color: $blue;
+  }
+}

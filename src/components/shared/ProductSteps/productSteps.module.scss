@@ -1,0 +1,315 @@
+@use '../../../styles/abstracts' as *;
+
+$duration: var(--duration);
+$lineWidth: 350px;
+
+.productSteps {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  padding: 5rem 0;
+  position: relative;
+
+}
+
+.heading {
+  .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.2;
+
+    @include small {
+      font-size: 1.75rem;
+    }
+
+    @include medium {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.step {
+  flex: 1 250px;
+  display: flex;
+  flex-direction: column;
+  font-family: $fontFamilyBase;
+  
+  @include small {
+    width: 80%;
+  }
+
+  &.inactive {
+    .stepImage {
+      img {
+        @include large {
+          opacity: 0;
+        }
+      }
+    }
+
+    .stepDescription {
+      @include large {
+        opacity: 0;
+      }
+    }
+  }
+
+  &.active {
+    .stepLine {
+      @include large {
+        animation: drawLine $duration linear forwards; //Duration must match
+      }
+    }
+
+    .stepImage {
+      img {
+        @include large {
+          animation: fadeSlideUp 1s ease forwards;
+        }
+      }
+    }
+
+    .stepDescription {
+      @include large {
+        animation: fadeSlideDown 1s ease forwards;
+      }
+    }
+  }
+
+  &.done {
+    .stepLine {
+      @include large {
+        width: $lineWidth;
+        max-width: 400px;
+      }
+    }
+  }
+
+  .stepLine {
+    @include small {
+      display: none;
+    }
+
+    @include large {
+      display: block;
+      height: 3px;
+      background-color: $grey;
+      position: absolute;
+      left: 95%;
+      z-index: 0;
+    }
+  }
+  
+  .stepImage {
+    display: flex;
+
+    @include small {
+      order: 2;
+      height: 45%;
+      min-height: unset;
+      width: 225px;
+      margin: 2rem 0 0;
+      align-items: flex-start;
+    }
+
+    @include large {
+      order: 0;
+      margin: 0 auto;
+      align-items: flex-end;
+      width: unset;
+      min-height: 325px;
+    }
+  }
+
+  .stepNumber {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: $grey;
+    color: $purple;
+    font-family: $fontFamilyTitle;
+    font-size: 2rem;
+    border-radius: 50%;
+
+    span {
+      position: relative;
+      z-index: 5;
+    }
+
+    @include small {
+      position: absolute;
+      left: 1rem;
+      margin: 0;
+      z-index: 5;
+      width: 50px;
+      height: 50px;
+    }
+
+    @include large {
+      position: relative;
+      margin: 2rem auto;
+      left: 0;
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .stepDescription {
+    color: $dark-purple;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      text-align: left;
+    }
+
+    @include large {
+      text-align: center;
+    }
+
+    a {
+      color: $dark-purple;
+      text-decoration: underline;
+      font-family: $fontFamilySemiBold;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 5;
+
+  @include small {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @include large {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.additional {
+  font-size: 1.25rem;
+  font-family: $fontFamilyBase;
+  text-align: center;
+  margin: 1rem auto 0;
+  max-width: 725px;
+  padding: 2rem 1rem;
+  color: $dark-purple;
+  background-color: $white;
+  position: relative;
+  z-index: 5;
+  
+  &.inactive {
+    @include large {
+      opacity: 0;
+    }
+  }
+
+  &.active {
+    @include large {
+      animation: fadeSlideDownDelay 3s ease forwards;
+    }
+  }
+}
+
+.features {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 985px;
+  margin: 2rem auto 0;
+
+  @include small {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+    width: 70%;
+    min-width: 300px;
+    padding: 0 1rem;
+  }
+
+  @include medium {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+  }
+
+  @include large {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 2rem;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.feature {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  color: $dark-purple;
+  animation-delay: 2s;
+  line-height: 1.3;
+  font-family: $fontFamilySemiBold;
+
+  @include small {
+    opacity: 1;
+  }
+
+  @include large {
+    opacity: 0;
+  }
+
+  &.active {
+    @include large {
+      animation: fadeSlideRightDelay 3s ease forwards;
+    }
+  }
+
+  .checkmark {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background-color: $grey;
+    color: $purple;
+    font-size: 0.9rem;
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes drawLine {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: $lineWidth;
+  }
+}

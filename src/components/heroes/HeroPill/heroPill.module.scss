@@ -1,0 +1,418 @@
+@use '../../../styles/abstracts/' as *;
+
+.heroPill {
+  padding-top: calc($navHeight + 1rem);
+
+  @include small {
+    height: 95vh; 
+    flex-direction: column;
+  }
+
+  @include medium {
+    height: 70vh; 
+    flex-direction: row;
+  }
+
+  &.start {
+    .content {
+      order: 0;
+    }
+
+    .image, .video {
+      order: 1;
+      border-radius: 200px 0 0 200px;
+    }
+
+    @include small {
+      .image, .video {
+        right: 0;
+        //align-self: flex-end;
+      }
+    }
+
+    @include large {
+      .container {
+        flex-direction: row;
+      }
+
+      .image, .video {
+        right: 0;
+      }
+    }
+  }
+
+  &.end {
+    .content {
+      order: 1;
+    }
+
+    .image, .video {
+      order: 0;
+      border-radius: 0 200px 200px 0;
+    }
+
+    @include small {
+      .image, .video {
+        left: 0;
+        align-self: flex-start;
+      }
+    }
+
+    @include large {
+      .container {
+        flex-direction: row-reverse;
+      }
+
+      .image, .video {
+        left: 0;
+      }
+    }
+  }
+}
+
+.dark {
+  .content {
+    p {
+      color: $dark-purple;
+    }
+  
+    h1 {
+      color: $dark-purple;
+    }
+  }
+}
+
+.light {
+  .content {
+    p {
+      color: $white;
+    }
+  
+    h1 {
+      color: $white;
+    }
+  }
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  flex: 1;
+  //max-width: $layoutWidth;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  //position: relative;
+
+  @include small {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  @include large {
+    gap: 3rem;
+  }
+
+  @include wide {
+    gap: 5rem;
+  }
+}
+
+.content {
+  flex: 1;
+
+  @include small {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  @include medium {
+    text-align: left;
+    padding: 1rem;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 3.25rem;
+    }
+  }
+
+  @include large {
+    text-align: left;
+    flex: 0.4;
+  }
+
+  @include wide {
+    h1 {
+      font-size: 3.35rem;
+    }
+  }
+  
+  /* Breadcrumb Override */
+  & > div {
+    nav {
+      font-family: $fontFamilyTitle;
+      margin-bottom: 0.5rem;
+
+      ol {
+        @include small {
+          justify-content: center;
+        }
+
+        @include medium {
+          justify-content: flex-start;
+        }
+      }
+
+      .currentPage {
+        color: $blue;
+      }
+    }
+  }
+
+  p {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    color: $white;
+    font-family: $fontFamilyBase;
+  }
+
+  h1 {
+    color: $white;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include small {
+    position: relative;
+    height: 360px; 
+    width: 95vw;
+    margin-right: 0;
+    margin-left: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  @include medium {
+    position: relative;
+    right: 0;
+    width: 45vw;
+    height: 340px;
+    align-self: center;
+  }
+
+  @include large {
+    position: absolute;
+    right: 0;
+    height: 375px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include wide {
+    height: 400px;
+  }
+}
+
+.video {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity 0.3s;
+  
+  video, iframe {
+    height: 100%;
+    max-width: unset;
+    position: absolute;
+    
+    @include small {
+      width: 100vw;
+      height: 100%;
+    }
+
+    @include medium {
+      width: 700px;
+      height: 100%;
+    }
+
+    @include large {
+      width: 750px;
+      height: 135%;
+    }
+
+    @include wide {
+      width: 890px;
+      height: 125%;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+
+    .playIcon {
+      
+      span {
+        border-color: $purple;
+      }
+
+      svg {
+        color: $purple;
+      }
+    }
+  }
+
+  @include small {
+    position: relative;
+    height: 360px; 
+    width: 95vw;
+    margin-right: 0;
+    margin-left: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  @include medium {
+    position: relative;
+    right: 0;
+    width: 45vw;
+    height: 340px;
+    align-self: center;
+  }
+
+  @include large {
+    position: absolute;
+    right: 0;
+    height: 375px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include wide {
+    height: 400px;
+  }
+}
+
+.imageInner {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  
+  @include small {
+    width: 100vw;
+    height: 125%;
+  }
+
+  @include medium {
+    width: 50vw;
+    max-width: 700px;
+    height: 100%;
+    border-radius: 300px 0 0 300px;
+  }
+
+  @include wide {
+    max-width: 890px;
+  }
+}
+
+.playIcon {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  //border-radius: 300px 0 0 300px;
+
+  span {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgb(255 255 255 / 50%);
+    border-radius: 200px;
+    transition: border 0.3s;
+  }
+
+  svg {
+    font-size: 2rem;
+    color: rgb(255 255 255 / 50%);
+    margin-left: 5px;
+    transition: color 0.3s;
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+
+  @include small {
+    width: 100%;
+  }
+
+  @include medium {
+    width: unset;
+  }
+
+  /* CTA Overrides */
+  & > div {
+    justify-content: flex-start;
+
+    /*a {
+      border-color: $white;
+      color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $dark-purple;
+
+        svg {
+          color: $dark-purple;
+        }
+      }
+
+      svg {
+        color: $white;
+      }
+    }*/
+  }
+
+  @include medium {
+    /* CTA Override */
+    & > div {
+      justify-content: flex-start;
+    }
+  }
+}

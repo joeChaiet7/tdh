@@ -1,0 +1,877 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/en-CA",
+      "destination": "https://business.teladochealth.com/en-CA/",
+      "statusCode": 301
+    },
+    { 
+      "source": "/en-CA/:path*",
+      "destination": "https://business.teladochealth.com/en-CA/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/en-AU/:path*",
+      "destination": "https://business.teladochealth.com/en-AU/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/pt/:path*",
+      "destination": "https://business.teladochealth.com/pt/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/pt-BR/:path*",
+      "destination": "https://business.teladochealth.com/pt-BR/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/fr-CA/:path*",
+      "destination": "https://business.teladochealth.com/fr-CA/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/es/:path*",
+      "destination": "https://business.teladochealth.com/es/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/fr/:path*",
+      "destination": "https://business.teladochealth.com/fr/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/en-GB/:path*",
+      "destination": "https://business.teladochealth.com/en-GB/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/da-DK/:path*",
+      "destination": "https://business.teladochealth.com/da-DK/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/zh-CN/:path*",
+      "destination": "https://business.teladochealth.com/zh-CN/:path*", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/el/:path*",
+      "destination": "https://business.teladochealth.com/:path*/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ways-we-help",
+      "destination": "https://www.teladoc.com/ways-we-help",
+      "statusCode": 301
+    },  
+    { 
+      "source": "/what-we-do",
+      "destination": "/organizations/whole-person-care", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/notice-of-non-discrimination",
+      "destination": "https://business.teladochealth.com/notice-of-non-discrimination",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "https://business.teladochealth.com/terms-and-conditions",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "https://business.teladochealth.com/terms-of-service",
+      "statusCode": 301
+    },
+    {
+      "source": "/accessibility-statement",
+      "destination": "/legal/accessibility-statement",
+      "statusCode": 301
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/legal/accessibility-statement",
+      "statusCode": 301
+    },
+    {
+      "source": "/bios/:path*",
+      "destination": "https://business.teladochealth.com/leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/board",
+      "destination": "https://business.teladochealth.com/board",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers",
+      "destination": "https://business.teladochealth.com/careers",
+      "statusCode": 301
+    },
+    {
+      "source": "/chronic-care",
+      "destination": "https://business.teladochealth.com/chronic-care",
+      "statusCode": 301
+    },
+    {
+      "source": "/chronic-condition-management",
+      "destination": "https://business.teladochealth.com/chronic-condition-management",
+      "statusCode": 301
+    },
+    {
+      "source": "/clinical-careers",
+      "destination": "https://business.teladochealth.com/clinical-careers",
+      "statusCode": 301
+    },
+    {
+      "source": "/complex-care",
+      "destination": "https://business.teladochealth.com/complex-care",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/:path*",
+      "destination": "https://business.teladochealth.com/contact/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/continuing-care",
+      "destination": "https://business.teladochealth.com/continuing-care",
+      "statusCode": 301
+    },
+    {
+      "source": "/coronavirus",
+      "destination": "https://business.teladochealth.com/coronavirus",
+      "statusCode": 301
+    },
+    {
+      "source": "/devices",
+      "destination": "https://business.teladochealth.com/devices",
+      "statusCode": 301
+    },
+    {
+      "source": "/diabetes-management",
+      "destination": "https://business.teladochealth.com/diabetes-management",
+      "statusCode": 301
+    },
+    {
+      "source": "/diabetes-prevention",
+      "destination": "https://business.teladochealth.com/diabetes-prevention",
+      "statusCode": 301
+    },
+    {
+      "source": "/diversity-equity-inclusion",
+      "destination": "https://business.teladochealth.com/diversity-equity-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/global-expert-panel",
+      "destination": "https://business.teladochealth.com/global-expert-panel",
+      "statusCode": 301
+    },
+    {
+      "source": "/high-acuity",
+      "destination": "https://business.teladochealth.com/high-acuity",
+      "statusCode": 301
+    },
+    {
+      "source": "/hospitals-health-systems",
+      "destination": "https://business.teladochealth.com/hospitals-health-systems",
+      "statusCode": 301
+    },
+    {
+      "source": "/hypertension",
+      "destination": "https://business.teladochealth.com/hypertension",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership/:path*",
+      "destination": "https://business.teladochealth.com/leadership/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/medical-group",
+      "destination": "https://business.teladochealth.com/medical-group",
+      "statusCode": 301
+    },
+    {
+      "source": "/mental-health",
+      "destination": "https://business.teladochealth.com/mental-health",
+      "statusCode": 301
+    },
+    {
+      "source": "/newsroom/:path*",
+      "destination": "https://business.teladochealth.com/newsroom/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/newsroom/press/release/:path*",
+      "destination": "https://business.teladochealth.com/newsroom/press/release/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/patents",
+      "destination": "https://business.teladochealth.com/patents",
+      "statusCode": 301
+    },
+    {
+      "source": "/platform",
+      "destination": "https://business.teladochealth.com/platform",
+      "statusCode": 301
+    },
+    {
+      "source": "/primary-care",
+      "destination": "https://business.teladochealth.com/primary-care",
+      "statusCode": 301
+    },
+    {
+      "source": "/resources/:path*",
+      "destination": "https://business.teladochealth.com/resources/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/solo-with-teams",
+      "destination": "https://business.teladochealth.com/solo-with-teams",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions",
+      "destination": "https://business.teladochealth.com/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/specialty-care",
+      "destination": "https://business.teladochealth.com/specialty-care",
+      "statusCode": 301
+    },
+    {
+      "source": "/telehealth",
+      "destination": "https://business.teladochealth.com/telehealth",
+      "statusCode": 301
+    },
+    {
+      "source": "/telemedicine",
+      "destination": "https://business.teladochealth.com/telemedicine",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/legal/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/legal-disclaimer",
+      "destination": "/legal/legal-disclaimer",
+      "statusCode": 301
+    },
+    {
+      "source": "/aetna",
+      "destination": "https://www.teladoc.com/aetna",
+      "statusCode": 301
+    },
+    {
+      "source": "/primary360-aetna",
+      "destination": "https://www.teladoc.com/primary360-aetna",
+      "statusCode": 301
+    },
+    {
+      "source": "/aetna-therapy",
+      "destination": "https://www.teladoc.com/aetna-therapy",
+      "statusCode": 301
+    },
+    {
+      "source": "/fepblue",
+      "destination": "https://www.teladoc.com/fepblue",
+      "statusCode": 301
+    },
+    {
+      "source": "/ambettervirtualaccess",
+      "destination": "https://www.teladoc.com/ambettervirtualaccess",
+      "statusCode": 301
+    },
+    {
+      "source": "/ambetter",
+      "destination": "https://member.teladoc.com/ambetter",
+      "statusCode": 301
+    },
+    {
+      "source": "/bankofamerica",
+      "destination": "https://www.teladoc.com/bankofamerica",
+      "statusCode": 301
+    },
+    {
+      "source": "/bankofamerica/faqs",
+      "destination": "https://www.teladoc.com/bankofamerica/faqs",
+      "statusCode": 301
+    },
+    {
+      "source": "/microsoft",
+      "destination": "https://www.teladoc.com/microsoft",
+      "statusCode": 301
+    },
+    {
+      "source": "/ups",
+      "destination": "https://www.teladoc.com/ups",
+      "statusCode": 301
+    },
+    {
+      "source": "/thd",
+      "destination": "https://www.teladoc.com/thd",
+      "statusCode": 301
+    },
+    {
+      "source": "/boeing",
+      "destination": "https://www.teladoc.com/boeing",
+      "statusCode": 301
+    },
+    {
+      "source": "/cisco",
+      "destination": "https://www.teladoc.com/cisco",
+      "statusCode": 301
+    },
+    {
+      "source": "/statefarm",
+      "destination": "https://www.teladoc.com/statefarm",
+      "statusCode": 301
+    },
+    {
+      "source": "/dell",
+      "destination": "https://www.teladoc.com/dell",
+      "statusCode": 301
+    },
+    {
+      "source": "/dellglobal",
+      "destination": "https://www.teladoc.com/dellglobal",
+      "statusCode": 301
+    },
+    {
+      "source": "/apple",
+      "destination": "https://www.teladoc.com/apple",
+      "statusCode": 301
+    },
+    {
+      "source": "/uhcretirees",
+      "destination": "https://member.teladoc.com/uhcretirees",
+      "statusCode": 301
+    },
+    {
+      "source": "/usaa",
+      "destination": "https://www.teladoc.com/usaa",
+      "statusCode": 301
+    },
+    {
+      "source": "/uc",
+      "destination": "https://member.teladoc.com/uc",
+      "statusCode": 301
+    },
+    {
+      "source": "/thermofisher",
+      "destination": "https://www.teladoc.com/thermofisher",
+      "statusCode": 301
+    },
+    {
+      "source": "/emblemhealth",
+      "destination": "https://www.teladoc.com/emblemhealth",
+      "statusCode": 301
+    },
+    {
+      "source": "/emblemhealth-es",
+      "destination": "https://www.teladoc.com/emblemhealth-es",
+      "statusCode": 301
+    },
+    {
+      "source": "/connecticare",
+      "destination": "https://www.teladoc.com/connecticare",
+      "statusCode": 301
+    },
+    {
+      "source": "/connecticare-es",
+      "destination": "https://www.teladoc.com/connecticare-es",
+      "statusCode": 301
+    },
+    {
+      "source": "/truist",
+      "destination": "https://www.teladoc.com/truist",
+      "statusCode": 301
+    },
+    {
+      "source": "/abbott",
+      "destination": "https://www.teladoc.com/abbott",
+      "statusCode": 301
+    },
+    {
+      "source": "/facebook",
+      "destination": "https://member.teladoc.com/facebook",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinawaes",
+      "destination": "https://member.teladoc.com/molinawaes",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinawa",
+      "destination": "https://member.teladoc.com/molinawa",
+      "statusCode": 301
+    },
+    {
+      "source": "/molina",
+      "destination": "https://www.teladoc.com/molina",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinaes",
+      "destination": "https://www.teladoc.com/molinaes",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinamarketplace-ky",
+      "destination": "https://www.teladoc.com/molinamarketplace-ky",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinamarketplace",
+      "destination": "https://www.teladoc.com/molinamarketplace",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinamarketplace-es",
+      "destination": "https://www.teladoc.com/molinamarketplace-es",
+      "statusCode": 301
+    },
+    {
+      "source": "/molina-oh",
+      "destination": "https://member.teladoc.com/molina-oh",
+      "statusCode": 301
+    },
+    {
+      "source": "/molina/KY",
+      "destination": "https://member.teladoc.com/molina/KY",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinaes/KY",
+      "destination": "https://member.teladoc.com/molinaes/KY",
+      "statusCode": 301
+    },
+    {
+      "source": "/molinamarketplace-ky/es",
+      "destination": "https://www.teladoc.com/molinamarketplace-ky/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/molina-ny",
+      "destination": "https://www.teladoc.com/molina-ny",
+      "statusCode": 301
+    },
+    {
+      "source": "/molina-ny/es",
+      "destination": "https://www.teladoc.com/molina-ny/es",
+      "statusCode": 301
+    },
+    {
+      "source": "/premera",
+      "destination": "https://member.teladoc.com/premera",
+      "statusCode": 301
+    },
+    {
+      "source": "/hn",
+      "destination": "https://www.teladoc.com/hn",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellcare",
+      "destination": "https://member.teladoc.com/wellcare",
+      "statusCode": 301
+    },
+    {
+      "source": "/lacare-vi",
+      "destination": "https://member.teladoc.com/lacare-vi",
+      "statusCode": 301
+    },
+    {
+      "source": "/lacare-tl",
+      "destination": "https://member.teladoc.com/lacare-tl",
+      "statusCode": 301
+    },
+    {
+      "source": "/lacare-ch",
+      "destination": "https://member.teladoc.com/lacare-ch",
+      "statusCode": 301
+    },
+    {
+      "source": "/lacare-ru",
+      "destination": "https://member.teladoc.com/lacare-ru",
+      "statusCode": 301
+    },
+    {
+      "source": "/lacare-es",
+      "destination": "https://member.teladoc.com/lacare-es",
+      "statusCode": 301
+    },
+    {
+      "source": "/lacare",
+      "destination": "https://member.teladoc.com/lacare",
+      "statusCode": 301
+    },
+    {
+      "source": "/fridayhealthplans",
+      "destination": "https://member.teladoc.com/fridayhealthplans",
+      "statusCode": 301
+    },
+    {
+      "source": "/fmcp",
+      "destination": "https://www.teladoc.com/fmcp",
+      "statusCode": 301
+    },
+    {
+      "source": "/caresource",
+      "destination": "https://www.teladoc.com/caresource",
+      "statusCode": 301
+    },
+    {
+      "source": "/caresource-es",
+      "destination": "https://www.teladoc.com/caresource-es",
+      "statusCode": 301
+    },
+    {
+      "source": "/mycareohio",
+      "destination": "https://www.teladoc.com/mycareohio",
+      "statusCode": 301
+    },
+    {
+      "source": "/mycareohio-es",
+      "destination": "https://www.teladoc.com/mycareohio-es",
+      "statusCode": 301
+    },
+    {
+      "source": "/hnca",
+      "destination": "https://www.teladoc.com/hnca",
+      "statusCode": 301
+    },
+    {
+      "source": "/accenture",
+      "destination": "https://www.teladoc.com/accenture",
+      "statusCode": 301
+    },
+    {
+      "source": "/fideliscare",
+      "destination": "https://www.teladoc.com/fideliscare",
+      "statusCode": 301
+    },
+    {
+      "source": "/google",
+      "destination": "https://www.teladoc.com/google",
+      "statusCode": 301
+    },
+    {
+      "source": "/exploremyplan",
+      "destination": "https://www.teladoc.com/exploremyplan",
+      "statusCode": 301
+    },
+    {
+      "source": "/alabama",
+      "destination": "https://member.teladoc.com/alabama",
+      "statusCode": 301
+    },
+    {
+      "source": "/credence",
+      "destination": "https://www.teladoc.com/credence",
+      "statusCode": 301
+    },
+    {
+      "source": "/bcbssc",
+      "destination": "https://member.teladoc.com/bcbssc",
+      "statusCode": 301
+    },
+    {
+      "source": "/go",
+      "destination": "https://member.teladoc.com/go",
+      "statusCode": 301
+    },
+    {
+      "source": "/bsc",
+      "destination": "https://www.teladoc.com/bsc",
+      "statusCode": 301
+    },
+    {
+      "source": "/oscar",
+      "destination": "https://member.teladoc.com/oscar",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthfirst",
+      "destination": "https://member.teladoc.com/healthfirst",
+      "statusCode": 301
+    },
+    {
+      "source": "/nreca",
+      "destination": "https://www.teladoc.com/nreca",
+      "statusCode": 301
+    },
+    {
+      "source": "/teamcare",
+      "destination": "https://member.teladoc.com/teamcare",
+      "statusCode": 301
+    },
+    {
+      "source": "/pnc",
+      "destination": "https://member.teladoc.com/pnc",
+      "statusCode": 301
+    },
+    {
+      "source": "/lowes",
+      "destination": "https://member.teladoc.com/lowes",
+      "statusCode": 301
+    },
+    {
+      "source": "/railroad",
+      "destination": "https://member.teladoc.com/railroad",
+      "statusCode": 301
+    },
+    {
+      "source": "/trsactivecare",
+      "destination": "https://member.teladoc.com/trsactivecare",
+      "statusCode": 301
+    },
+    {
+      "source": "/trscarestandard",
+      "destination": "https://member.teladoc.com/trscarestandard",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellfleetstudent",
+      "destination": "https://www.teladoc.com/wellfleetstudent",
+      "statusCode": 301
+    },
+    {
+      "source": "/lifewiseor",
+      "destination": "https://member.teladoc.com/lifewiseor",
+      "statusCode": 301
+    },
+    {
+      "source": "/lifewisewa",
+      "destination": "https://member.teladoc.com/lifewisewa",
+      "statusCode": 301
+    },
+    {
+      "source": "/carolinacompletehealth",
+      "destination": "https://member.teladoc.com/carolinacompletehealth",
+      "statusCode": 301
+    },
+    {
+      "source": "/superior-healthplan",
+      "destination": "https://member.teladoc.com/superior-healthplan",
+      "statusCode": 301
+    },
+    {
+      "source": "/highmark",
+      "destination": "https://www.teladoc.com/highmark",
+      "statusCode": 301
+    },
+    {
+      "source": "/tuftshealthplan",
+      "destination": "https://member.teladoc.com/tuftshealthplan",
+      "statusCode": 301
+    },
+    {
+      "source": "/USFHP",
+      "destination": "https://member.teladoc.com/USFHP",
+      "statusCode": 301
+    },
+    {
+      "source": "/mhsindiana",
+      "destination": "https://member.teladoc.com/mhsindiana",
+      "statusCode": 301
+    },
+    {
+      "source": "/ohana",
+      "destination": "https://www.teladoc.com/ohana",
+      "statusCode": 301
+    },
+    {
+      "source": "/sunshinehealth",
+      "destination": "https://member.teladoc.com/sunshinehealth",
+      "statusCode": 301
+    },
+    {
+      "source": "/meridiancomplete",
+      "destination": "https://member.teladoc.com/meridiancomplete",
+      "statusCode": 301
+    },
+    {
+      "source": "/atcmmp",
+      "destination": "https://member.teladoc.com/atcmmp",
+      "statusCode": 301
+    },
+    {
+      "source": "/trillium",
+      "destination": "https://www.teladoc.com/trillium",
+      "statusCode": 301
+    },
+    {
+      "source": "/wcnc",
+      "destination": "https://www.teladoc.com/wcnc",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellcareliberty",
+      "destination": "https://www.teladoc.com/wellcareliberty",
+      "statusCode": 301
+    },
+    {
+      "source": "/frb",
+      "destination": "https://member.teladoc.com/frb",
+      "statusCode": 301
+    },
+    {
+      "source": "/ih",
+      "destination": "https://member.teladoc.com/ih",
+      "statusCode": 301
+    },
+    {
+      "source": "/allwell",
+      "destination": "https://www.teladoc.com/allwell",
+      "statusCode": 301
+    },
+    {
+      "source": "/allwell-az",
+      "destination": "https://www.teladoc.com/allwell-az",
+      "statusCode": 301
+    },
+    {
+      "source": "/allwell-nm",
+      "destination": "https://www.teladoc.com/allwell-nm",
+      "statusCode": 301
+    },
+    {
+      "source": "/allwell-pa",
+      "destination": "https://www.teladoc.com/allwell-pa",
+      "statusCode": 301
+    },
+    {
+      "source": "/allwell-wi",
+      "destination": "https://www.teladoc.com/allwell-wi",
+      "statusCode": 301
+    },
+    {
+      "source": "/us-privacy-practices-for-employee-personal-information",
+      "destination": "https://business.teladochealth.com/us-privacy-practices-for-employee-personal-information",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023-phoenix-open-friday",
+      "destination": "https://business.teladochealth.com/2023-phoenix-open-friday/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023-phoenix-open-wednesday",
+      "destination": "https://business.teladochealth.com/2023-phoenix-open-wednesday/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023-phoenix-open-thursday",
+      "destination": "https://business.teladochealth.com/2023-phoenix-open-thursday/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023-phoenix-open-sunday",
+      "destination": "https://business.teladochealth.com/2023-phoenix-open-sunday/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/:path*",
+      "destination": "https://business.teladochealth.com/lp/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/employee-benefits",
+      "destination": "https://business.teladochealth.com/employee-benefits",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "https://business.teladochealth.com/es/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/notice-of-non-discrimination",
+      "destination": "https://business.teladochealth.com/notice-of-non-discrimination",
+      "statusCode": 301
+    },
+    {
+      "source": "/cards",
+      "destination": "https://business.teladochealth.com/cards",
+      "statusCode": 301
+    },
+    {
+      "source": "/workforce-challenges",
+      "destination": "https://business.teladochealth.com/workforce-challenges/",
+      "statusCode": 301
+    },
+    {
+      "source": "/consumerism",
+      "destination": "https://business.teladochealth.com/consumerism",
+      "statusCode": 301
+    },
+    {
+      "source": "/health-equity",
+      "destination": "https://business.teladochealth.com/health-equity/",
+      "statusCode": 301
+    },
+    {
+      "source": "/new-models-of-care",
+      "destination": "https://business.teladochealth.com/new-models-of-care/",
+      "statusCode": 301
+    },
+    {
+      "source": "/growth-and-scale",
+      "destination": "https://business.teladochealth.com/growth-and-scale/",
+      "statusCode": 301
+    },
+    {
+      "source": "/value-based-care",
+      "destination": "https://business.teladochealth.com/value-based-care/",
+      "statusCode": 301
+    },
+    {
+      "source": "/360",
+      "destination": "/expert-care/primary-care",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://liveapi-cached.yext.com https://dev.visualwebsiteoptimizer.com https://websdk.appsflyer.com https://cookie-cdn.cookiepro.com https://vercel.live https://go1.teladochealth.com https://teladoc-private.piwik.pro https://d5phz18u4wuww.cloudfront.net; style-src 'self' 'unsafe-inline' https://go1.teladochealth.com; img-src 'self' data: https: https://s3.amazonaws.com https://assets.vercel.com https://teladoc-private.piwik.pro https://dev.visualwebsiteoptimizer.com https://cookie-cdn.cookiepro.com; object-src 'none'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://vercel.live https://go1.teladochealth.com; connect-src 'self' https://liveapi.yext.com https://liveapi-cached.yext.com https://privacyportal.cookiepro.com https://cookie-cdn.cookiepro.com https://geolocation.onetrust.com https://dev.visualwebsiteoptimizer.com; font-src 'self'; frame-ancestors 'none'"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(self), microphone=()"
+        }
+      ]
+    }
+  ],
+  "buildCommand": "GATSBY_DISABLE_CACHE_PERSISTENCE=1 FORCE_PARALLEL_BUILDS=1 GATSBY_CPU_COUNT=4 NODE_OPTIONS=--max-old-space-size=16384 gatsby build"
+}

@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+.employersMentalHealth {
+  .stats, .slider {
+    & > section {
+      padding: 2rem 0;
+    }
+  }
+  
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

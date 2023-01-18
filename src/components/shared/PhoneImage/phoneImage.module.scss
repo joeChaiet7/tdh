@@ -1,0 +1,132 @@
+@use '../../../styles/abstracts/' as *;
+
+$maxWidth: 450px;
+$width: 100%;
+$shapeShadow: 0 5px 10px 5px rgba(101, 108, 116, 0.20);
+$shapeSpacing: 18px;
+
+.phoneImage {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  width: $width;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  min-height: 500px;
+  min-width: 245px;
+
+  img {
+    width: calc($width - 8vw);
+    max-width: 350px;
+    min-width: 225px;
+    //max-width: calc($maxWidth - 125px);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.dropA, .dropB, .circle, .halfCircle {
+  position: absolute;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.dropA {
+  left: 0;
+  top: $shapeSpacing;
+  animation-duration: 6s;
+  animation-name: floatDownRight;
+}
+
+.dropB {
+  right: 0;
+  bottom: $shapeSpacing;
+  animation-duration: 6.5s;
+  animation-name: floatUpLeft;
+
+  &.topLeft {
+    left: 0;
+    top: $shapeSpacing;
+    animation-duration: 5s;
+    animation-name: floatUpLeft;
+  }
+
+  &.bottomRight {
+    right: 0;
+    bottom: $shapeSpacing;
+    animation-duration: 7s;
+    animation-name: floatDownRight;
+  }
+}
+
+.circle {
+  right: calc($shapeSpacing - 2%);
+  top: $shapeSpacing;
+  animation-duration: 7s;
+  animation-name: floatDownLeft;
+  z-index: 2;
+
+  /* Shape style override */
+  .Circle {
+    background: linear-gradient(90deg, #0fad26 50%, $purple 50%);
+    box-shadow: 0 0 20px 5px rgba(101, 108, 116, 0.20);
+  }
+}
+
+
+.halfCircle {
+  left: $shapeSpacing;
+  bottom: calc($shapeSpacing + 5%);
+  z-index: 2;
+  animation-duration: 8s;
+  animation-name: floatUpRight;
+
+  /* Shape style override */
+  .HalfCircle {
+    box-shadow: 0 0 20px 5px rgba(202, 1, 190, 0.15);
+  }
+}
+
+
+/* Animations */
+@keyframes floatDownRight {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(10px, 10px);
+  }
+}
+
+@keyframes floatDownLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-10px, 10px);
+  }
+}
+
+@keyframes floatUpLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-10px, -10px);
+  }
+}
+
+@keyframes floatUpRight {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(10px, -10px);
+  }
+}

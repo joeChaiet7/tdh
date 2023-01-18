@@ -1,0 +1,395 @@
+@use '../../../styles/abstracts/' as *;
+
+.teaserApp {  
+  @include small {
+    padding: 3rem 2rem;
+  }
+
+  @include large {
+    padding: 5rem 2rem;
+  }
+  /* Call to Action Override */
+
+  &.light {
+    .title {
+      color: $white;
+    }
+
+    .text {
+      color: $white;
+    }
+
+    p {
+      color: $white;
+    }
+  }
+
+  &.dark {
+    .title {
+      color: $dark-purple;
+    }
+
+    .text {
+      color: $dark-purple;
+    }
+    
+    p {
+      color: $dark-purple;
+    }
+  }
+
+  &.end {
+    .content {
+      order: 1;
+    }
+
+    .image {
+      order: 0;
+    }
+  }
+
+  &.start {
+    .content {
+      order: 0;
+    }
+
+    .image {
+      order: 1;
+      //border-radius: 40px 40px 100px 0 ;
+    }
+  }
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  max-width: $layoutWidth;
+  margin: 0 auto;
+
+  @include small {
+    flex-direction: column; 
+    gap: 3rem;
+  }
+
+  @include large {
+    flex-direction: row;
+    gap: 7rem;
+  }
+}
+
+.content {
+  @include small {
+    flex: 1;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  @include large {
+    flex: 0.45;
+    padding: 0;
+    text-align: left;
+  }
+
+  ol,
+  ul {
+    margin-top: 2rem;
+
+    .List {
+
+      &__item {
+        margin-top: 1rem;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  ul {
+    margin-left: 1rem;
+  }
+
+  ol {
+    list-style: auto;
+    margin-left: 2rem;
+  }
+
+  ul .List__item {
+    position: relative;
+    padding-left: 25px;
+
+    &::before {
+      @extend %flex-row-align-center;
+      content: "\2022";
+      color: $blue;
+      font-size: 2rem;
+      font-family: "FontAwesome Solid";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .check {
+    .content {
+      ul {
+        .List__item {
+
+          &::before {
+            content: "\f00c";
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: $fontFamilyTitle;
+  color: $dark-purple;
+  line-height: 1.2;
+  
+  @include medium {
+    max-width: 675px;
+  }
+}
+
+.text {
+  font-family: $fontFamilyBase;
+  color: $dark-purple;
+  margin-top: 1rem;
+}
+
+.image {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  max-width: 375px;
+  //max-height: 450px;
+  overflow: hidden;
+  padding: 2rem 0;
+
+  & > article {
+    width: unset;
+  }
+
+  @include small {
+    flex: 1;
+    padding: 0;
+  }
+
+  @include large {
+    flex: 0.4;
+    padding: 0;
+  }
+}
+
+.cta {
+  margin-top: 3rem;
+
+  > div {
+    @include small {
+      justify-content: center;
+    }
+
+    @include large {
+      justify-content: flex-start;
+    }
+  }
+}
+
+
+/* Teaser Override */
+.conditionManagement {
+  .text {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem 3rem;
+      margin-left: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:before {
+          content: "\f00c";
+          font-family: "FontAwesome Solid";
+          font-size: 0.8rem;
+          margin-right: 0.5rem;
+          color: $purple;
+          background-color: $grey;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.primaryCare {
+  padding: 1rem;
+
+  .image {
+    border-radius: 0 !important;
+    position: relative;
+    right: 0;
+    z-index: 5;
+    max-width: 250px;
+    height: 300px;
+    overflow: unset;
+
+    img {
+      @include small {
+        position: relative;
+        top: 0;
+      }
+
+      @include large {
+        position: absolute;
+        top: -8rem;
+      }
+    }
+  }
+
+  .cta {
+
+    > div {
+      .button, a {
+
+        @include small {
+          min-width: 300px;
+        }
+
+        @include medium {
+          min-width: 150px;
+        }
+        
+        &:hover {
+          .icon svg {
+            color: $white;
+          }
+        }
+      }
+      
+      .button .icon svg {
+        font-size: 1.2rem;
+        color: $dark-purple;
+        
+        &:not(:first-of-type) {
+          margin-left: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+
+.rating {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+
+  p {
+    font-family: $fontFamilyBase;
+    margin-left: 1rem;
+    color: $dark-purple;
+  }
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  a {
+    color: $purple;
+    text-decoration: underline;
+    transition: color 0.3s;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      margin-left: 0;
+    }
+
+    @include medium {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      color: $dark-purple;
+    }
+  }
+}
+
+.stars {
+  unicode-bidi: bidi-override;
+  color: transparent;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  position: relative;
+  padding: 0;
+
+  .starsOuter {
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      content: "\e28b \e28b \e28b \e28b \e28b";
+      font-family: "FontAwesome Solid";
+      font-weight: 900;
+      color: transparent;
+      letter-spacing: 0;
+    }
+  }
+
+  .starsInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+
+    &:before {
+      content: "\e28b \e28b \e28b \e28b \e28b";
+      font-family: "FontAwesome Solid";
+      font-weight: 900;
+      color: $yellow;
+      letter-spacing: 0;
+    }
+  }
+
+  .starsFill {
+    color: $yellow;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  .starsEmpty {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+}

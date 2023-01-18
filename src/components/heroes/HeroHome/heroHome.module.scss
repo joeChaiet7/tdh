@@ -1,0 +1,349 @@
+@use '../../../styles/abstracts' as *;
+
+.images {
+  @extend %flex-row-align-center;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  @include small {
+    position: relative;
+    height: 85vw;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  @include medium {
+    position: unset;
+    justify-content: flex-end;
+    align-items: center;
+    order: 2;
+    height: 100%;
+  }
+}
+
+.imageShape {
+  background-repeat: no-repeat;
+  flex: 1 1;
+  
+  max-width: 725px;
+  max-height: 725px;
+
+  transition: background-size 12s ease, background-position 12s ease;
+
+  &.start {
+    background-size: 127%;
+    background-position: 54% 40%;
+    opacity: 1;
+  }
+
+  &.active {
+    animation: fadeIn 3s ease forwards;
+    background-size: 123%;
+    background-position: 52% 38%;
+  }
+
+  &.inactive {
+    animation: fadeOut 3s ease forwards;
+  }
+
+  @include small {
+    position: absolute;
+    top: 0;
+    right: unset;
+    //min-width: 450px;
+    //min-height: 400px;
+    width: 100vw;
+    height: 85vw;
+    background-size: 120%;
+    background-position: 50% 40%;
+    border-radius: 0 0 100% 100%;
+  }
+
+  @include medium {
+    right: -2rem;
+    top: -3rem;
+    width: 52vw;
+    height: 52vw;
+    background-position: 50% 35%;
+    border-radius: 50% 0 50% 50%;
+  }
+
+  @include large {
+    width: 52vw;
+    height: 52vw;
+  }
+}
+
+.heroHome {
+  position: relative;
+
+  @include small {
+    overflow: hidden;
+    height: unset;
+  }
+
+  @include medium {
+    height: 70vh;
+    min-height: 700px;
+    max-height: 705px;
+  }
+
+  @include wide {
+    height: 80vh;
+  }
+
+  @include landscape {
+    height: 660px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $layoutWidth;
+  flex: 1;
+
+  @include small {
+    /*display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;*/
+    height: 100%;
+  }
+
+  @include medium {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    height: 100%;
+  }
+}
+
+.content {
+  flex: 1;
+
+  @include small {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  @include medium {
+    flex: 1;
+    text-align: left;
+    padding: 0 2rem;
+    margin-top: 5vw;
+  }
+
+  @include large {
+    margin-top: unset;
+  }
+
+  @include wide {
+    padding: 0 0 0 2rem;
+  }
+
+  h1, .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+
+    @include small {
+      font-size: 2.25rem;
+    }
+
+    @include medium {
+      font-size: 3rem;
+    }
+
+    @include large {
+      font-size: 3.5rem;
+    }
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    margin-bottom: 0;
+    color: $dark-purple;
+
+    @include small {
+      margin-top: 1rem;
+    }
+
+    @include medium {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.cta {
+  @include small {
+    margin-top: 1rem;
+  }
+
+  @include medium {
+    margin-top: 2rem;
+  }
+
+  /* CTA Overrides */
+  > div {
+    justify-content: flex-start;
+  }
+}
+/*
+.images {
+  width: 450px;
+  height: 450px;
+  //border-radius: 50%;
+  position: relative;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-position: 75% 100%;
+  overflow: hidden;
+
+  @include small {
+    height: 50vh;
+    width: 100%;
+    max-width: unset;
+    max-height: unset;
+    margin: 0 auto -75px auto;
+    position: relative;
+    //bottom: $navHeight;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 75% 0%;
+    clip-path: circle(56% at 50% 20%);
+  }
+
+  @include duo {
+    clip-path: circle(62% at 50% 18%);
+  }
+
+  @include medium {
+    border-radius: unset;
+    height: 60vw;
+    width: 60vw;
+    max-width: unset;
+    max-height: unset;
+    position: absolute;
+    top: 0;
+    margin-bottom: -200px;
+    clip-path: circle(55% at 75% 45%);
+  }
+
+  @include large {
+    clip-path: circle(55% at 75% 20%);
+  }
+
+  @include wide {
+    height: 65vw;
+    width: 65vw;
+    max-width: 720px;
+    max-height: 850px;
+    min-width: unset;
+    min-height: unset;
+    clip-path: circle(45% at 60% 25%);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    transition: transform 10s ease-in;
+
+    &:nth-of-type(odd) {
+      transform-origin: top left;
+    }
+
+    &:nth-of-type(even) {
+      transform-origin: top right;
+    }
+
+    @include small {
+      height: 180%;
+      width: 120%;
+      top: -30vh;
+    }
+
+    @include duo {
+      height: 160%;
+      width: 120%;
+      top: -25vh;
+    }
+
+    @include medium {
+      height: 155%;
+      width: 120%;
+      top: -17rem;
+    }
+
+    @include large {
+      height: 120%;
+      width: 100%;
+      top: -16rem;
+    }
+
+    @include wide {
+      top: -16rem;
+    }
+  }
+}
+
+.img {
+  opacity: 0;
+
+  &.start {
+    opacity: 1;
+    transition: none;
+    animation: imgStart 12s forwards;
+  }
+
+  &.active {
+    animation: fadeIn 2s ease-in-out forwards;
+    transform: scale(1.05);
+  }
+
+  &.inactive {
+    animation: fadeOut 2s ease-in-out forwards;
+    transform: scale(1.02);
+  }
+}
+*/
+.pavers {
+  @include small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: -1;
+    justify-self: flex-end;
+    //margin-top: 2rem;
+
+    img {
+      width: 50%;
+      flex: 0.5;
+    }
+  }
+
+  @include medium {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes imgStart {
+  0% {
+    opacity: 1;
+    background-position: 50% 35%;
+    background-size: 120%
+  }  
+
+  100% {
+    opacity: 1;
+    background-position: 49% 33%;
+    background-size: 123%
+  } 
+}

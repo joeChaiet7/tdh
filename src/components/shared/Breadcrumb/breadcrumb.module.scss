@@ -1,0 +1,48 @@
+@use '../../../styles/abstracts/' as *;
+
+$breadcrumbColor: var(--breadcrumbColor);
+$breadcrumbFont: var(--breadcrumbFont);
+
+.breadcrumb {
+  ol {
+    @extend %flex-row-align-center;
+    justify-content: flex-start;
+    list-style: none;
+
+    li {
+      color: $breadcrumbColor;
+      font-family: $breadcrumbFont;
+
+      a {
+        text-transform: capitalize;
+        color: $dark-purple;
+        font-size: 1rem;
+        color: $breadcrumbColor;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:after {
+        content: "/";
+        padding: 0 0.5rem;
+        font-size: 1.25rem;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+
+        a {
+          color: $blue;
+          font-weight: 600;
+        }
+    
+        &:after {
+          content: "";
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

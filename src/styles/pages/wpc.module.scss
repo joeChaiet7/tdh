@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+.wholePersonExperience {
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

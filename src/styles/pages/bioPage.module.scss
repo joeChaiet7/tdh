@@ -1,0 +1,119 @@
+@use '../abstracts/' as *;
+
+.bioPage {
+  padding: calc($navHeight + 3rem) 1rem 5rem;
+  overflow-x: hidden;
+}
+
+.container {
+  //position: relative;
+  width: 100%;
+  max-width: $layoutWidth;
+  margin: 0 auto;
+}
+
+.content {
+  .bio {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    margin-top: 2rem;
+
+    p {
+      &:not(:first-of-type){
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.text {
+  @include small {
+    margin-top: 2rem;
+  }
+
+  @include medium {
+    margin-top: 0;
+  }
+
+  .title {
+    font-family: $fontFamilyTitle;
+    font-size: 2.5rem;
+    color: $dark-purple;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+
+  .role {
+    font-family: $fontFamilyBase;
+    color: $purple;
+    font-size: 1.5rem;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+  
+  .links {
+    margin-top: 2rem;
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+    a {
+      color: $dark-purple;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.image {
+  background: rgb(221,221,221);
+  background: linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(221,221,221,0.6026785714285714) 50%, rgba(255,255,255,0) 100%);  
+  border-radius: 50% 50% 0 50%;
+  overflow: hidden;
+  position: relative;
+
+  @include small {
+    width: 70vw;
+    height: 70vw;
+    margin: 0 auto;
+  }
+
+  @include medium {
+    float: right;
+    margin-left: 5rem;
+    width: 525px;
+    height: 525px;
+    shape-outside: circle();
+  }
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 90%;
+    height: 100%;
+  }
+}

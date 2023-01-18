@@ -1,0 +1,45 @@
+@use '../../../styles/abstracts/' as *;
+
+.siteMobileMenuToggle {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  margin: 1rem auto;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.item {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  font-family: $fontFamilyBase;
+  color: #999;
+  border: none;
+  border-radius: 25px;
+  z-index: 3;
+  background-color: transparent;
+  text-transform: capitalize;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
+.active {
+  font-family: $fontFamilySemiBold;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.button {
+  background-color: $purple;
+  border-radius: 50px;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}

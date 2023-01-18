@@ -1,0 +1,106 @@
+@use '../../../styles/abstracts/' as *;
+
+.testimonialSingle {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 2rem auto 0;
+
+  @include small {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 0;
+    padding: 0 2rem;
+  }
+}
+
+.content {
+
+  @include small {
+    padding: 0 1rem;
+  }
+
+  @include medium {
+    padding: 2rem;
+  }
+}
+
+.subtitle {
+  color: $purple;
+  font-family: $fontFamilySemiBold;
+}
+
+.title {
+  color: $dark-purple;
+  font-family: $fontFamilyTitle;
+  font-size: 2rem;
+}
+
+.text {
+  margin-top: 0.5rem;
+
+  p {
+    font-family: $fontFamilyBase;
+  }
+}
+
+.image {
+  overflow: hidden;
+
+  @include small {
+    max-width: 250px;
+    border-radius: 0 0 0 200px;
+  }
+
+  @include medium {
+    max-width: unset;
+    border-radius: 0 0 0 125px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.cta {
+  /* CTA Overrides */
+  & > div {
+    justify-content: flex-start;
+
+    a {
+      color: $purple;
+      padding: 0 !important;
+      justify-content: flex-start;
+      
+      @include small {
+        width: 100%;
+      }
+
+      @include medium {
+        width: unset;
+      }
+
+      &:hover {
+        color: $dark-purple;
+
+        span svg {
+          color: $dark-purple !important;
+        }
+      }
+
+      span svg {
+        color: $purple !important;
+      }
+    }
+  }
+}

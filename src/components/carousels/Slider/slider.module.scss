@@ -1,0 +1,353 @@
+@use '../../../styles/abstracts/' as *;
+@use '../carousel';
+
+$sliderSize: min(100%, 700px);
+
+.forward, .back {
+  bottom: 43%;
+
+  @include small {
+    display: none;
+  }
+
+  @include medium {
+    display: flex;
+  }
+}
+
+.disclaimer {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+.heading {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: $fontFamilyTitle;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-align: center;
+  color: $dark-purple;
+  padding: 0 1rem;
+}
+
+.slide {  
+  display: flex;
+  flex: 0 0 $sliderSize;
+  width: $sliderSize;
+  scroll-snap-align: center;
+  margin-right: 4rem;
+  box-sizing: content-box;
+
+  &:first-child {
+    margin-left: calc(50vw - ($sliderSize / 2));
+  }
+
+  &:last-child {
+    margin-right: calc(50vw - ($sliderSize / 2));
+  }
+}
+
+.slideContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+
+  @include small {
+    flex-direction: column-reverse;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.slideDescription {
+  margin-top: 1rem;
+
+  p {
+    font-family: $fontFamilyBase;
+    text-align: center;
+    color: $dark-purple;
+  }
+
+  span {
+    font-family: $fontFamilyTitle;
+    font-size: 1.5rem;
+    line-height: 1;
+    height: 35px;
+
+    &:first-of-type {
+      &::after {
+        content: "\201C";
+        color: $dark-purple;
+      }
+    }
+
+    &:last-of-type {
+      &::after {
+        content: "\201D";
+        color: $dark-purple;
+      }
+    }
+  }
+}
+
+.slideContent {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+
+  @include small {
+    flex: 1;
+  }
+
+  @include medium {
+    flex: 0.5;
+  }
+}
+
+.slideSubtitle {
+  font-size: 1.2rem;
+  color: $purple;
+  font-family: $fontFamilySemiBold;
+}
+
+.slideTitle {
+  color: $dark-purple;
+  font-family: $fontFamilyTitle;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.slideText {
+  margin-top: 0.5rem;
+
+  p {
+    font-family: $fontFamilyBase;
+  }
+}
+
+.slideImage {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  } 
+
+  @include small {
+    width: 100%;
+    height: 225px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 150px;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  @include medium {
+    min-height: 375px;  
+    flex: 0.5;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.playBtn {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  position: absolute;
+  border: 6px solid #fff;
+  width: 85px;
+  height: 85px;
+  border-radius: 200px;
+  z-index: 1;
+  transition: border-color 0.3s, background-color 0.3s;
+
+  svg {
+    font-size: 2rem;
+    color: $white;
+    margin-left: 5px;
+    transition: color 0.3s;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(239, 242, 247, 0.5);
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 2;
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 150px;
+
+  @include medium {
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.active {
+  box-shadow: 0 0 25px 15px $shadow;
+  background-color: $white;
+
+  .playBtn {
+    z-index: 2;
+  }
+  
+  .slideImage {
+    &:hover {
+      .overlay {
+        opacity: 0.1;
+      }
+
+      .playBtn {
+        border-color: $purple;
+        background-color: $purple;
+      }
+    }
+  }
+}
+
+.inactive, .disabled {
+  box-shadow: none;
+  background-color: $grey;
+
+  .slideImage {
+    pointer-events: none;
+  }
+}
+
+.rating {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  a {
+    color: $purple;
+    text-decoration: underline;
+    transition: color 0.3s;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      margin-left: 0;
+    }
+
+    @include medium {
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      color: $dark-purple;
+    }
+  }
+}
+
+.stars {
+  unicode-bidi: bidi-override;
+  color: transparent;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  position: relative;
+  padding: 0;
+
+  .starsOuter {
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      content: "\e28b \e28b \e28b \e28b \e28b";
+      font-family: "FontAwesome Solid";
+      font-weight: 900;
+      color: $white;
+      letter-spacing: 0;
+    }
+  }
+
+  .starsInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+
+    &:before {
+      content: "\e28b \e28b \e28b \e28b \e28b";
+      font-family: "FontAwesome Solid";
+      font-weight: 900;
+      color: $yellow;
+      letter-spacing: 0;
+    }
+  }
+
+  .starsFill {
+    color: $yellow;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  .starsEmpty {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+}

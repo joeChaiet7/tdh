@@ -1,0 +1,18 @@
+@use '../../../styles/abstracts/' as *;
+
+$indicatorInitialLocation: var(--indicatorInitialLocation);
+$indicatorWidth: var(--indicatorWidth);
+$indicatorColor: var(--indicatorColor);
+
+.siteMenuIndicator {
+  position: absolute;
+  bottom: 0;
+  left: $indicatorInitialLocation;
+  margin: 0;
+  width: $indicatorWidth;
+  height: 4px;
+  background-color: $indicatorColor;
+  transition-property: left, width, opacity, background-color;
+  transition-duration: 0.3s;
+  z-index: 4;
+}

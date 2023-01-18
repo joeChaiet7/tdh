@@ -1,0 +1,98 @@
+@use '../../../styles/abstracts/' as *;
+
+.siteMenuIcon {
+  @extend %flex-row-align-center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  padding: 0;
+  position: relative;
+  width: 46px;
+  background-color: transparent;
+}
+
+.menuOpened {
+  svg {
+    transform: rotate(180deg);
+  }
+
+  .line {
+    &:nth-of-type(1) {
+      stroke-dasharray: 20 90;
+      stroke-dashoffset: -72px;
+    }
+
+    &:nth-of-type(2) {
+      stroke-dasharray: 50 82;
+    }
+
+    &:nth-of-type(3) {
+      stroke-dasharray: 20 90;
+      stroke-dashoffset: -72px;
+    }
+  }
+
+  .item {
+    background-color: $white;
+
+    &:nth-of-type(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    &:nth-of-type(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.menuClosed {
+  .item {
+    &:nth-of-type(1) {
+      transform: translateY(-6px);
+    }
+
+    &:nth-of-type(2) {
+      opacity: 1;
+    }
+
+    &:nth-of-type(3) {
+      transform: translateY(6px);
+    }
+  }
+}
+
+.container {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: $purple;
+  stroke-width: 7;
+  stroke-linecap: round;
+
+  &:nth-of-type(1) {
+    stroke-dasharray: 40 82;
+  }
+
+  &:nth-of-type(2) {
+    stroke-dasharray: 30 82;
+  }
+
+  &:nth-of-type(3) {
+    stroke-dasharray: 40 82;
+  }
+}

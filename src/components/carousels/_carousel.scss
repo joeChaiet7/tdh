@@ -1,0 +1,204 @@
+@use '../../styles/abstracts/' as *;
+
+$inactiveBackgroundColor: $grey;
+$slideWidth: 340px !default; 
+//$columnSize: min(100%, 500px);
+//$sliderSize: min(100%, $slideWidth);
+
+$columnSize: 100%;
+$sliderSize: 100%;
+
+.testimonialsSlider {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  width: 100%;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  //max-width: 1050px;
+  margin: 0 auto;
+  //padding: 0 2rem;
+
+  h2 {
+    font-size: 2.5rem
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.container {
+  width: $columnSize;
+  max-width: $columnSize;
+}
+
+.carousel {
+  width: 100%;
+  padding: 4rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  width: $sliderSize;
+  margin: 1rem auto;
+  padding: 2rem 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+  @include small {
+    scroll-padding: 0 calc($sliderSize / 6);
+  }
+
+  @include medium {
+    scroll-padding: 0 calc($slideWidth / 4);
+  }
+  
+  &::after {
+    content: '';
+    padding-right: 0.02px; /* smallest size that is cross browser */
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+.slider {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+  @include small {
+    padding: 2rem;
+  }
+
+  @include medium {
+    padding: 2rem 0;
+  }
+}
+
+.indicators {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.25rem;
+}
+
+.indicatorItem {
+  width: 10px;
+  height: 10px;
+  border: 1px solid $dark-purple;
+  border-radius: 50px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &.active {
+    background-color: $dark-purple;
+    box-shadow: none;
+  }
+}
+
+.navigation {
+  @extend %flex-row-align-center;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
+  width: 225px;
+
+  @include small {
+    position: relative;
+  }
+}
+
+.forward, .back {
+  background-color: $white;
+  color: $dark-purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: none;
+  border-radius: 200px;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  box-shadow: 0 0px 10px 5px $shadow;
+  transition: color 0.3s;
+  width: 50px;
+  height: 50px;
+
+  &:hover {
+    color: $purple;
+  }
+
+  @include small {
+    display: flex;
+  }
+}
+
+.forward {
+  right: 50px;
+  bottom: 48%;
+}
+
+.back {
+  left: 50px;
+  bottom: 48%;
+}
+
+/* Animations */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }  
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }  
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }  
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

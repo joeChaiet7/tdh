@@ -1,0 +1,99 @@
+@use '../../../styles/abstracts/' as *;
+
+.testimonialTile {
+  max-width: 1000px;
+  box-shadow: 0 0 50px  $shadow;
+
+  @include small {
+    margin: 2rem 1rem;
+    border-radius: 40px 40px 40px 150px;
+  }
+
+  @include medium {
+    margin: 3rem auto;
+    border-radius: 40px;
+  }
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.content {
+  @extend %flex-column-align-center;
+  padding: 3rem;
+  flex: 0.5;
+}
+
+.quote {
+  @extend %flex-row-align-center;
+    justify-content: center;
+    align-self: center;
+    gap: 0.15rem;
+
+  span {
+    font-family: $fontFamilyTitle;
+    font-size: 5rem;
+    line-height: 1;
+    height: 35px;
+
+    &::after {
+      content: "\201D";
+      color: $blue;
+    }
+  }
+}
+
+.text {
+  font-family: $fontFamilyBase;
+  max-width: 300px;
+  text-align: center;
+  color: $dark-purple;
+  margin-top: 3rem;
+}
+
+.person {
+  margin-top: 3rem;
+
+  .name {
+    font-family: $fontFamilySemiBold;
+  }
+}
+.image {
+  flex: 0.5;
+  min-height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 40px 40px 40px 150px;
+}
+
+.disclaimer {
+  text-align: center;
+  font-family: $fontFamilyBase;
+  color: $black;
+
+  max-width: 950px;
+  margin: 0 auto;
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  @include small {
+    padding: 0 1rem 1rem;
+  }
+
+  @include medium {
+    padding: 0 0 1rem;
+  }
+}

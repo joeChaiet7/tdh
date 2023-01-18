@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.employersPrimaryCare {
+  .stats, .slider {
+    & > section {
+      padding: 2rem 0;
+    }
+  }
+
+  .teaser {
+    position: relative;
+    top: -2px;
+  }
+
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

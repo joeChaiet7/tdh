@@ -1,0 +1,150 @@
+@use '../../../styles/abstracts' as *;
+
+.videoGrid {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.heading {
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: center;
+
+  .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    margin-top: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+
+  @include small {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 2;
+  }
+}
+
+.videoItem {
+  flex: 0 46%;
+
+  .image {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+
+    &:hover {
+      .overlay {
+        opacity: 0;
+      }
+    }
+  }
+
+  .content {
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-family: $fontFamilyTitle;
+    font-size: 1.5rem;
+    color: $dark-purple;
+  }
+
+  .desc {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    margin-top: 1rem;
+  }
+
+  button {
+    @extend %flex-row-align-center;
+    color: $purple;
+    font-family: $fontFamilyBase;
+  }
+
+  .playBtn {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    position: absolute;
+    border: 6px solid #fff;
+    width: 85px;
+    height: 85px;
+    border-radius: 200px;
+    z-index: 1;
+    transition: border-color 0.3s, background-color 0.3s;
+  
+    svg {
+      font-size: 2rem;
+      color: $white;
+      margin-left: 5px;
+      transition: color 0.3s;
+    }
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 2;
+  
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+  
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.cta {
+  margin-top: 1rem;
+  
+  button {
+    color: $purple;
+    font-family: $fontFamilyBase;
+    transition: color 0.3s;
+
+    svg {
+      margin-left: 0.35rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    &:hover {
+      color: $dark-purple;
+
+      svg {
+        color: $dark-purple;
+        transform: translateX(3px);
+      }
+    }
+  }
+}

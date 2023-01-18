@@ -1,0 +1,20 @@
+@use '../abstracts/' as *;
+
+.mentalHealth {
+  .details {
+    max-width: 675px;
+    margin: 0 auto;
+    
+    @include small {
+      padding: 4rem 2rem;
+    }
+  
+    @include medium {
+      padding: 4rem 0;
+    }
+  }
+
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

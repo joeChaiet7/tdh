@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.specialtyWellness {
+  .heading {
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+
+  .specialist, .wellness {
+    ul {
+      max-width: 550px;
+    }
+  }
+  
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

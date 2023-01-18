@@ -1,0 +1,372 @@
+@use '../../../styles/abstracts' as *;
+
+.stats {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  //clip-path: url(#statsclipbottom);
+  position: relative;
+  //min-height: 550px;
+  background-color: $dark-purple;
+  overflow: hidden
+
+  /*
+  &:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    clip-path: url(#statscliptop);
+    background-color: $dark-purple
+  }*/
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  width: $layoutWidth;
+  margin: 0 auto;
+
+  @include small {
+    flex-direction: column;
+    gap: 4rem;
+    //padding: 3rem 0;
+    //padding-top: calc($navHeight + 2rem);
+  }
+
+  @include large {
+    flex-direction: row;
+    //padding: 5rem 0;
+  }
+
+  &.extraPdding {
+    padding: 2rem 0;
+  }
+
+  &.noImage {
+    justify-content: center;
+    
+    .left {
+      flex: 0.8;
+    }
+
+    @include small {
+      .items {
+        justify-items: center;
+        margin-top: 4rem;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5rem;
+      }
+    }
+
+    @include medium {
+      .items {
+        margin-top: 2rem;
+        width: 65%;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @include large {
+      .items {
+        grid-template-columns: repeat(4, 1fr);
+        width: 96%;
+      }
+    }
+  }
+}
+
+.left {
+  position: relative;
+  color: $white;
+  flex: 0.95 1;
+  padding: 0 1rem;
+
+  @include small {
+    margin: 0 auto;
+
+    /* GenericText Override */
+    .GenericText {
+      &__title, &__subtitle {
+        text-align: center;
+      }
+    }
+  }
+
+  @include medium {
+    margin: 0;
+  }
+
+  @include wide {
+    /* GenericText Override */
+    .GenericText {
+      &__title, &__subtitle {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.right {
+  //z-index: 5;
+  @include small {
+    position: relative;
+    width: 100%;
+    align-self: center;
+    height: 300px;
+    max-width: 350px;
+    flex: 1;
+
+  }
+
+  @include medium {
+    position: relative;
+    height: auto;
+    flex: 0.7;
+    max-width: 450px;
+  }
+
+  @include large {
+    width: 60%;
+    //max-width: 500px;
+  }
+
+  @include wide {
+    top: 0;
+  }
+
+  img {
+    @include small {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+      height: 100%;
+    }
+
+    @include large {
+      margin-left: auto;
+    }
+  }
+}
+
+.items {
+  display: grid;
+
+  @include small {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+    max-width: 300px;
+    margin: 1rem auto 0;
+  }
+
+  @include medium {
+    //grid-template-columns: repeat(3, 1fr);
+    max-width: unset;
+    width: 85%;
+    margin: 2rem auto 0;
+    //padding: 1rem;
+  }
+
+  @include large {
+    width:  unset;
+  }
+
+  @include wide {
+    align-items: flex-start;
+    justify-content: flex-start;  
+  }
+
+  &.twoColumn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include small {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include medium {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &.threeColumn {
+    display: grid;
+
+    @include small {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include medium {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .smallText {
+      font-size: 1.2rem;
+      margin-left: 0.25rem;
+    }
+    
+  }
+}
+
+.dollar {
+  order: -1;
+  font-size: 1.5rem;
+}
+
+.metricEnd {
+  order: 1;
+}
+
+.item {
+  @include small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @include medium {
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch
+  }
+
+  .itemTitle {
+    @extend %flex-row-align-center;
+    font-size: 2.5rem;
+    font-family: $fontFamilySemiBold;
+    min-height: 60px;
+    position: relative;
+
+    &.light {
+      color: $white;
+    }
+  }
+
+  .itemText {
+    font-family: $fontFamilyBase;
+
+    &.light {
+      color: $white;
+    }
+  }
+
+  .itemShape {
+    width: 35px;
+    height: 35px;
+    border-radius: 200px 200px 200px 0;
+    position: absolute;
+    left: -10px;
+    bottom: 12px;
+    z-index: 0;
+
+    &.purple {
+      background-color: $purple;
+    }
+
+    &.pink {
+      background-color: $pink;
+    }
+
+    &.green {
+      background-color: $green;
+    }
+
+    &.blue {
+      background-color: $blue;
+    }
+  }
+
+  .itemStat {
+    @extend %flex-row-align-center;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.icon {
+  $iconSpacing: 40px;
+  position: relative;
+
+  .itemIcon {
+    @extend %flex-row-align-center;
+    justify-content: flex-start;
+
+    /* Icon override */
+
+    > div {
+      width: 45px;
+      height: 60px;
+    }
+
+    svg {
+      width: $iconSpacing;
+
+      &:nth-of-type(2) {
+        left: 30px;
+        position: absolute;
+        filter: drop-shadow(3px 0 0 $dark-purple) drop-shadow(-3px 0 0 $dark-purple) drop-shadow(0 3px 0 $dark-purple) drop-shadow(0 -3px 0 $dark-purple);
+      }
+
+      /*&:last-of-type {
+        margin-left: 20px;
+      }*/
+    }
+  }
+}
+
+.cta {
+  > div {
+    padding: 0 1rem;
+
+    @include small {
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    @include large {
+      justify-content: flex-start;
+    }
+
+    a {
+      border-color: $white;
+      color: $white;
+      
+      &:hover {
+        background-color: $white;
+        color: $dark-purple;
+      }
+
+      @include small {
+        min-width: 300px;
+      }
+
+      @include large {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+.disclaimer {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: $fontFamilyBase;
+  font-size: 0.9rem;
+
+  &.light {
+    color: $white;
+  }
+
+  &.dark {
+    color: $dark-purple;
+  }
+}

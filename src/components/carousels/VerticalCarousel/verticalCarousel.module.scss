@@ -1,0 +1,437 @@
+@use '../../../styles/abstracts/' as *;
+
+$imageWidth: 350px;
+$maxWidth: 450px;
+$width: 100%;
+$shapeShadow: 0 5px 10px 5px rgba(101, 108, 116, 0.20);
+$shapeSpacing: 18px;
+$marginSpacing: 4rem;
+
+.verticalCarousel {
+  position: relative;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.carousel {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  //position: relative;
+  width: $imageWidth;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 60px;
+
+  @include small {
+    width: 250px;
+  }
+
+  @include medium {
+    margin-bottom: $marginSpacing;
+    min-height: 515px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.indicators {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.25rem;
+  position: absolute;
+  margin-bottom: $marginSpacing;
+
+  .indicatorItem {
+    width: 10px;
+    height: 10px;
+    border: 1px solid $dark-purple;
+    border-radius: 50px;
+    background-color: $white;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  
+    &.active {
+      background-color: $dark-purple;
+    }
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  border: 8px solid #000;
+  background-color: transparent;
+  position: absolute;
+  z-index: 15;
+}
+
+.bezel {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 15;
+
+  @include small {
+    //height: unset !important;
+  }
+
+  @include medium {
+    height: initial;
+    margin-bottom: $marginSpacing;
+  }
+}
+
+.right {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+
+  @include small {
+    width: 100%;
+  }
+
+  @include medium {
+    width: 50%;
+  }
+
+  img {
+    //background-color: green;
+    min-width: $imageWidth;
+    max-width: $imageWidth;
+    height: 500px;
+
+    position: absolute;
+  }
+}
+
+.left {
+  height: 100%;
+  position: relative;
+
+  @include small {
+    display: none;
+  }
+
+  @include medium {
+    display: flex;
+    width: 50%;
+  }
+
+  & > div {
+    @extend %flex-column-align-center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    padding-top: calc($navHeight - 3rem);
+
+    @include small {
+      height: 60vh;
+      width: 100%;
+      gap: 2rem;
+    }
+
+    @include medium {
+      height: 100vh;
+      width: calc($imageWidth + 50px);
+      gap: 0;
+    }
+  }
+}
+
+.slideInner {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+
+  @include small {
+    padding: $navHeight 2rem 4rem;
+  }
+
+  @include medium {
+    padding: 2rem;
+  }
+
+  .h1 {
+    width: 100%;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  p {
+    width: 100%;
+    margin-top: 1rem;
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+  }
+}
+
+.slidePopup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50px;
+  z-index: 20;
+  //width: 250px;
+}
+
+.slidePopupInner {
+  //background-color: $blue;
+  border-radius: 20px;
+  transform-origin: center;
+  width: 300px;
+  //height: 200px;
+  //opacity: 0;
+  box-shadow: 0 0 25px 15px $shadow;
+
+  &.grow {
+    animation: scaleUp 0.3s ease-in-out forwards;
+  }
+
+  &.shrink {
+    animation: scaleDown 0.3s ease-in-out forwards;
+  }
+}
+
+.slideImage {
+  margin: 0 auto;
+  border-radius: 40px;
+}
+
+.slideImageMobile {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  @include small {
+    display: flex;
+  }
+
+  @include medium { 
+    display: none;
+  }
+
+  img {
+    min-width: unset;
+    max-width: 225px;
+    height: unset;
+    margin: 0 auto;
+  }
+}
+
+.slideContent {
+  position: relative;
+}
+
+.slideNumber {
+  @extend %flex-row-align-center;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  background: $purple;
+  width: 60px;
+  height: 60px;
+  color: $white;
+  border-radius: 100px;
+  font-family: $fontFamilyTitle;
+  font-size: 2.25rem;
+  line-height: 1.25;
+}
+
+.slideShape {
+  align-self: flex-start;
+  width: 35px;
+  height: 35px;
+  border-radius: 200px 200px 200px 0;
+
+  &.purple {
+    background-color: $purple;
+  }
+
+  &.dark {
+    background-color: $dark-purple;
+  }
+
+  &.pink {
+    background-color: $pink;
+  }
+
+  &.blue {
+    background-color: $blue;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+  
+}
+
+.slideTitle {
+  align-self: flex-start;
+  font-family: $fontFamilyTitle;
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  color: $dark-purple;
+}
+
+.slideCta {
+  margin-top: 2rem;
+
+  & > div {
+    justify-content: flex-start;
+  }
+}
+
+.caption {
+  top: -2rem;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-family: $fontFamilyBase;
+  color: $dark-purple;
+  text-align: center;
+  max-width: 350px;
+  height: 0;
+  line-height: 0;
+
+  a {
+    color: $purple;
+    text-decoration: underline;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $dark-purple;
+    }
+  }
+}
+
+.shapes {
+  position: absolute;
+  width: 250px;
+  min-width: 250px;
+  height: 400px;
+}
+
+.dropA, .dropB, .circle, .halfCircle {
+  position: absolute;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.dropA {
+  left: 0;
+  top: $shapeSpacing;
+  animation-duration: 6s;
+  animation-name: floatDownRight;
+}
+
+.dropB {
+  right: 0;
+  bottom: $shapeSpacing;
+  animation-duration: 6.5s;
+  animation-name: floatUpLeft;
+
+  &.topLeft {
+    left: -50px;
+    top: -10px;
+    animation-duration: 5s;
+    animation-name: floatUpLeft;
+  }
+
+  &.bottomRight {
+    right: -75px;
+    bottom: 0;
+    animation-duration: 7s;
+    animation-name: floatDownRight;
+  }
+}
+
+.circle {
+  right: -40px;
+  top: 0;
+  animation-duration: 7s;
+  animation-name: floatDownLeft;
+  z-index: 25;
+}
+
+.halfCircle {
+  left: -70px;
+  bottom: 50px;
+  z-index: 2;
+  animation-duration: 8s;
+  animation-name: floatUpRight;
+
+  & > div {
+    /* Size override */
+    width: 120px !important;
+    height: 60px !important;
+    box-shadow: none !important;
+  }
+}
+
+
+/* Animations */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }  
+
+  90% {
+    transform: scale(1.05)
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }  
+
+  10% {
+    transform: scale(1.05)
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}

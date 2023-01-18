@@ -1,0 +1,61 @@
+@use '../../../styles/abstracts/' as *;
+
+.link {
+  @extend %flex-row-align-center;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-property: color, opacity;
+  padding: 1rem;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  //outline: none;
+  font: 16px/1.6 $fontFamilyBase;
+  color: $dark-purple;
+  cursor: pointer;
+
+  &[aria-expanded="true"], &:hover, &.active {
+    color: $purple;
+  }
+
+  svg {
+    font-size: 1.25rem;
+    color: $purple;
+  }
+}
+
+.button {
+  background-color: $purple;
+  padding: 0.5rem 1.25rem;
+  white-space: nowrap;
+  border-radius: 50px;
+  color: $white;
+  font-family: $fontFamilySemiBold;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: $white;
+    background-color: $dark-purple;
+  }
+}
+
+.withIcon {
+  @extend %flex-row-align-center;
+
+  svg {
+    font-size: 1.5rem;
+    margin-left: $iconSpacing;
+  }
+}
+
+.iconStart {
+  svg {
+    margin-right: $iconSpacing;
+  }
+}
+
+.iconEnd {
+  svg {
+    margin-left: $iconSpacing;
+  }
+}

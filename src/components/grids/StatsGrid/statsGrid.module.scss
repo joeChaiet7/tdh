@@ -1,0 +1,349 @@
+@use '../../../styles/abstracts' as *;
+
+$maskAmount: var(--maskAmount);
+
+.statsGrid {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.heading {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.green {
+  background-color: $green;
+}
+
+.darkPurple {
+  background-color: $dark-purple;
+}
+
+.blue {
+  background-color: $blue;
+}
+
+.pink {
+  background-color: $pink;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 1100px;
+
+  @include small {
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &.twoColumn {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include medium {
+      gap: 4rem 6rem;
+    }
+
+    .statsItem {
+      flex: 0 1;
+
+      @include small {
+        flex-basis: unset;
+      }
+
+      @include medium {
+        flex-basis: 45%;
+      }
+    }
+  }
+
+  &.threeColumn {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include medium {
+      gap: 3rem;
+    }
+
+    .statsItem {
+      flex: 0 1;
+      
+      @include small {
+        flex-basis: unset;
+      }
+
+      @include medium {
+        flex-basis: 300px;
+      }
+    }
+  }
+}
+
+.row {
+  .statsItem {
+    flex-direction: row;
+  }
+}
+
+.column {
+  .statsItem {
+    flex-direction: column;
+  }
+}
+
+.title {
+  font-family: $fontFamilyTitle;
+  color: $dark-purple;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.additional {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+
+  h2 {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+}
+
+.statsItem {
+  position: relative;
+
+  &.donut {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.3s ease-in-out, transform 0.6s ease-in-out, visibility 0.3s ease-in-out;
+    will-change: opacity, transform, visibility;
+
+    .itemInner {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    svg {
+      margin: auto;
+    }
+
+    .stat {
+      @extend %flex-row-align-center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      height: 100%;
+      width: 100%;
+    }
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+
+      .statStroke {
+        animation: donutChartFill 1s reverse;
+        transform: rotate(-90deg);
+        transform-origin: center;
+      }
+    }
+
+    .statValue {
+      font-size: 4rem;
+      font-family: $fontFamilyTitle;
+      fill: $white;
+    } 
+      
+    .fill {
+      position: absolute;
+      //right: 0;
+      z-index: 1;
+      height: 275px;
+      width: 275px;
+      border-radius: 50%;
+      background-color: $dark-purple;
+    }
+  }
+
+  &.circle {
+    .stat {
+      @extend %flex-row-align-center;
+      justify-content: space-between;
+      position: relative;
+      height: 300px;
+      width: 300px;
+      margin: 0 auto;
+    }
+  
+    .fill {
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+    }
+  
+    .leftImage {
+      position: absolute;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      mask-image: linear-gradient(90deg, black 47%, transparent 47%, transparent 100%);
+  
+      .shapeImage {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 320% 100%;
+      }
+    }
+  
+    .left {
+      position: absolute;
+      left: 0;
+      height: 300px;
+      width: 300px;
+  
+      .shape {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }  
+    }
+  
+    .value {
+      font-size: 3rem;
+      font-family: $fontFamilyTitle;
+      color: $white;
+      position: absolute;
+      right: 0;
+      z-index: 2;
+      padding-right: 10%;
+    }  
+  }
+
+  
+}
+
+/*
+.statsItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0;
+  min-height: calc(300px + 3rem + 1rem);
+
+  .left {
+    flex: 0.4;
+    position: relative;
+    top: -3rem;
+  }
+  
+  .right {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    border-radius: 0 250px 250px 0;
+    background-color: red;
+
+    flex: 0.55;
+    height: 300px;
+    width: 150px;
+  }
+
+  .stat {
+    font-size: 3rem;
+    font-family: $fontFamilyTitle;
+    color: $white;
+  }
+
+  @include small {
+    flex: 1 200px;
+    justify-content: flex-start;
+  }
+
+  @include medium {
+    flex: 0 325px;
+    justify-content: center;
+  }
+}*/
+
+.horizontal {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+
+  .image {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .content {
+    grid-column: 2;
+  }
+}
+
+.vertical {
+  .image {
+    flex-direction: column;
+  }
+}
+
+.image {
+  @extend %flex-row-align-center;
+  align-items: center;
+  height: 100%;
+  
+  svg {
+    color: $dark-purple;
+    font-size: 2rem;
+  }
+
+  img {
+    max-width: 85px;
+  }
+}
+
+.content {
+  color: $dark-purple;
+}
+
+.desc {
+  font-family: $fontFamilyBase;
+  margin-top: 1rem;
+  color: $dark-purple;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes donutChartFill {
+  to {
+    stroke-dasharray: 0 700; //2 * Math.PI * radius
+  }
+}

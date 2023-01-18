@@ -1,0 +1,26 @@
+@use '../styles/abstracts' as *;
+
+.imageIcon {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  
+  img {
+    z-index: 5;
+    position: absolute;
+    max-width: 60px !important;
+  }
+
+  .shape {
+    background-color: $blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 300px 300px 300px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}

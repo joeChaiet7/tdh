@@ -1,0 +1,543 @@
+@use '../../../styles/abstracts/' as *;
+
+.heroBubbles {
+  padding-top: calc($navHeight + 1rem);
+  position: relative;
+
+  @include small {
+    height: 95vh; 
+    min-height: 1030px;
+    flex-direction: column;
+  }
+
+  @include medium {
+    height: 70vh; 
+    flex-direction: row;
+    min-height: 795px;
+  }
+
+  @include large {
+    min-height: 685px;
+  }
+
+  &.start {
+    .content {
+      order: 0;
+    }
+
+    .images {
+      order: 1;
+    }
+
+    @include small {
+      .images {
+        right: 0;
+        //align-self: flex-end;
+      }
+    }
+
+    @include large {
+      .container {
+        flex-direction: row;
+      }
+
+      .images {
+        right: 0;
+      }
+    }
+  }
+
+  &.end {
+    .content {
+      order: 1;
+    }
+
+    .images {
+      order: 0;
+    }
+
+    @include small {
+      .images {
+        left: 0;
+        align-self: flex-start;
+      }
+    }
+
+    @include large {
+      .container {
+        flex-direction: row-reverse;
+      }
+
+      .images {
+        left: 0;
+      }
+    }
+  }
+}
+
+.dark {
+  .content {
+    p {
+      color: $dark-purple;
+    }
+  
+    h1 {
+      color: $dark-purple;
+    }
+  }
+}
+
+.light {
+  .content {
+    p {
+      color: $white;
+    }
+  
+    h1 {
+      color: $white;
+    }
+  }
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  flex: 1;
+  max-width: $layoutWidth;
+  height: 100%;
+  margin: 0 auto;
+  //position: relative;
+
+  @include small {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @include medium {
+    gap: 2rem;
+  }
+
+  @include large {
+    gap: 3rem;
+  }
+}
+
+.content {
+  flex: 1;
+
+  @include small {
+    flex: 0.35;
+    padding: 2rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include medium {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  @include large {
+    flex: 0.45;
+  }
+  
+  /* Breadcrumb Override */
+  & > div {
+    nav {
+      font-family: $fontFamilyTitle;
+      margin-bottom: 0.5rem;
+
+      ol {
+        @include small {
+          justify-content: center;
+        }
+
+        @include medium {
+          justify-content: flex-start;
+        }
+      }
+
+      .currentPage {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.heading {
+  p {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    color: $white;
+    font-family: $fontFamilyBase;
+  }
+
+  @include small {
+    text-align: center;
+
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  @include medium {
+    max-width: 600px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3.25rem;
+    }
+  }
+
+  @include large {
+    text-align: left;
+  }
+
+  @include wide {
+    h1 {
+      font-size: 3.35rem;
+    }
+  }
+}
+
+.images {
+  @extend %flex-row-align-center;
+  justify-content: flex-end;
+  position: relative;
+  //overflow: hidden;
+
+  @include small {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include large {
+    flex: 0.5;
+    height: 100%;
+    width: 50%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Relative */
+.imageShape {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transition: right 0.3s, top 0.3s;
+
+  @include small {
+    &:first-of-type {
+      width: 250px;
+      height: 250px;
+      right: -3%;
+      top: 2%;
+    }
+
+    &:nth-of-type(2) {
+      width: 125px;
+      height: 125px;
+      right: 70%;
+      top: 0;
+    }
+
+    &:nth-of-type(3) {
+      width: 180px;
+      height: 180px;
+      right: 35%;
+      top: 17rem;
+    }
+
+    &:nth-of-type(4) {
+      width: 90px;
+      height: 90px;
+      right: 68%;
+      top: 10rem;
+    }
+
+    &:nth-of-type(5) {
+      width: 80px;
+      height: 80px;
+      right: 5%;
+      top: 18rem;
+    }
+
+    &:nth-of-type(6) {
+      display: none;
+    }
+
+    &:nth-of-type(7) {
+      display: none;
+    }
+
+    &:nth-of-type(8) {
+      display: none;
+    } 
+  }
+
+  @include medium {
+    &:first-of-type {
+      width: 250px;
+      height: 250px;
+      right: -3%;
+      top: 2%;
+    }
+
+    &:nth-of-type(2) {
+      width: 125px;
+      height: 125px;
+      right: 31%;
+      top: 0;
+    }
+
+    &:nth-of-type(3) {
+      width: 130px;
+      height: 130px;
+      right: 23%;
+      top: 15rem;
+    }
+
+    &:nth-of-type(4) {
+      width: 140px;
+      height: 140px;
+      right: 50%;
+      top: 6rem;
+    }
+
+    &:nth-of-type(5) {
+      display: block;
+      width: 150px;
+      height: 150px;
+      right: 77%;
+      top: 13rem;
+    }
+
+    &:nth-of-type(6) {
+      display: block;
+      width: 80px;
+      height: 80px;
+      right: 35%;
+      top: 10rem;
+    }
+
+    &:nth-of-type(7) {
+      display: block;
+      width: 75px;
+      height: 75px;
+      right: 74%;
+      top: 8rem;
+    }
+
+    &:nth-of-type(8) {
+      display: block;
+      width: 115px;
+      height: 115px;
+      right: 84%;
+      top: 2rem;
+    } 
+  }
+
+  @include large {
+    &:first-of-type {
+      width: 325px;
+      height: 325px;
+      right: -25%;
+      top: 40%;
+    }
+
+    &:nth-of-type(2) {
+      width: 125px;
+      height: 125px;
+      right: 0;
+      top: 5%;
+    }
+
+    &:nth-of-type(3) {
+      width: 85px;
+      height: 85px;
+      right: 23%;
+      top: 9rem;
+    }
+
+    &:nth-of-type(4) {
+      width: 175px;
+      height: 175px;
+      right: 45%;
+      top: 3rem
+    }
+
+    &:nth-of-type(5) {
+      width: 150px;
+      height: 150px;
+      right: 48%;
+      top: 16rem;
+    }
+
+    &:nth-of-type(6) {
+      width: 100px;
+      height: 100px;
+      right: 46%;
+      top: 28rem;
+    }
+
+    &:nth-of-type(7) {
+      width: 75px;
+      height: 75px;
+      right: 71%;
+      top: 31rem;
+    }
+
+    &:nth-of-type(8) {
+      width: 100px;
+      height: 100px;
+      right: 86%;
+      top: 25rem;
+    } 
+  }
+
+  @include wide {
+    &:first-of-type {
+      right: -25%;
+    }
+
+    &:nth-of-type(2) {
+      right: 10%;
+    }
+
+    &:nth-of-type(3) {
+      right: 33%;
+      top: 10rem;
+    }
+
+    &:nth-of-type(4) {
+      right: 58%;
+    }
+
+    &:nth-of-type(6) {
+      right: 40%;
+      top: 27rem;
+    }
+
+    &:nth-of-type(7) {
+      right: 62%;
+      top: 31rem;
+    }
+
+    &:nth-of-type(8) {
+      right: 80%;
+      top: 26rem;
+    } 
+  }
+  /* Absolute
+  &:first-of-type {
+    width: 325px;
+    height: 325px;
+    right: -5%;
+    top: 40%;
+  }
+
+  &:nth-of-type(2) {
+    width: 125px;
+    height: 125px;
+    right: 20%;
+    top: calc($navHeight - 15px);
+  }
+
+  &:nth-of-type(3) {
+    width: 85px;
+    height: 85px;
+    right: 37%;
+    top: calc($navHeight + 8em);
+  }
+
+  &:nth-of-type(4) {
+    width: 175px;
+    height: 175px;
+    right: 60%;
+    top: calc($navHeight + 1rem);
+  }
+
+
+  &:nth-of-type(5) {
+    width: 150px;
+    height: 150px;
+    right: 49%;
+    top: calc(75px + 13rem);
+  }
+
+  &:nth-of-type(6) {
+    width: 100px;
+    height: 100px;
+    right: 45%;
+    top: calc(75px + 24rem);
+  }
+
+  &:nth-of-type(7) {
+    width: 75px;
+    height: 75px;
+    right: 60%;
+    top: calc(75px + 29rem);
+  }
+
+  &:nth-of-type(8) {
+    width: 100px;
+    height: 100px;
+    right: 75%;
+    top: calc(75px + 25rem);
+  } */
+}
+
+.playIcon {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  //border-radius: 300px 0 0 300px;
+
+  span {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 5px solid rgb(255 255 255 / 50%);
+    border-radius: 200px;
+    transition: border 0.3s;
+  }
+
+  svg {
+    font-size: 2rem;
+    color: rgb(255 255 255 / 50%);
+    margin-left: 5px;
+    transition: color 0.3s;
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+
+  /* CTA Overrides */
+  & > div {
+    justify-content: flex-start;
+  }
+
+  @include medium {
+    /* CTA Override */
+    & > div {
+      justify-content: flex-start;
+    }
+  }
+}

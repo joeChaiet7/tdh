@@ -1,0 +1,31 @@
+@use '../abstracts/' as *;
+
+.splat {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  padding-top: calc($navHeight + 1rem);
+  height: 100vh;
+}
+
+.message {
+  height: 400px;
+  margin: 0 auto;
+
+  .title {
+    font-family: $fontFamilyTitle;
+    font-size: 2rem;
+    color: $dark-purple;
+    text-align: center;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  & > div {
+    margin-top: 2rem;
+  }
+}

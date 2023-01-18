@@ -1,0 +1,318 @@
+@use '../../../styles/abstracts' as *;
+
+.waveSection {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  min-height: 650px;
+  margin: 2rem 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  //clip-path: url('#waveclip');
+
+
+  &.grey {
+    background-color: $grey;
+  }
+
+  &.darkPurple {
+    background-color: $dark-purple;
+  }
+
+  .waveTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .waveBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+/*
+  &:after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    clip-path: url('#topclip');
+    object-fit: cover;
+  }
+*/
+  
+
+/*
+  &:after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    clip-path: url('#bottomclip');
+  }
+
+
+  &:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    clip-path: url("#wavecliptop");
+    object-fit: cover;
+  }
+
+
+  &:after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 0%, 0% 0% , 0.00% 30.30%, 3.33% 30.00%, 6.67% 30.41%, 10.00% 31.51%, 13.33% 33.26%, 16.67% 35.61%, 20.00% 38.47%, 23.33% 41.74%, 26.67% 45.30%, 30.00% 49.02%, 33.33% 52.78%, 36.67% 56.45%, 40.00% 59.88%, 43.33% 62.96%, 46.67% 65.59%, 50.00% 67.66%, 53.33% 69.11%, 56.67% 69.88%, 60.00% 69.94%, 63.33% 69.30%, 66.67% 67.98%, 70.00% 66.01%, 73.33% 63.49%, 76.67% 60.48%, 80.00% 57.10%, 83.33% 53.47%, 86.67% 49.72%, 90.00% 45.98%, 93.33% 42.38%, 96.67% 39.05%, 100.00% 36.11%);
+    object-fit: cover;
+  }
+  */
+}
+
+.container {
+  @extend %flex-row-align-center;
+  align-items: center;
+  flex: 1;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 2;
+
+  @include small {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  @include medium {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  @include large {
+    //height: 50vh;
+    padding: 2rem 1rem;
+  }
+
+  @include wide {
+    gap: 3rem;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+
+  @include small {
+    flex: 1;
+    padding: 4rem 1rem 2rem 1rem;
+  }
+
+  @include large {
+    flex: 0.65;
+    padding: 0;
+  }
+}
+
+.heading {
+  h1, .title {
+    font-size: 3rem;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+}
+
+.quotation {
+
+  @include small {
+    max-width: 525px;
+  }
+
+  @include medium {
+    max-width: 500px;
+  }
+
+  @include large {
+    max-width: 625px;
+  }
+
+  p {
+    color: $white;
+    margin: 0;
+    line-height: 1.4;
+
+    @include small {
+      font-size: 1.25rem;
+    }
+
+    @include medium {
+      font-size: 1.5rem;
+    }
+
+    @include large {
+      font-size: 1.75rem;
+    }
+
+    &::after {
+      content: "\201D";
+      color: $white;
+      font-family: $fontFamilyTitle;
+      margin-left: 0.5rem;
+    }
+
+    &::before {
+      content: "\201C";
+      color: $white;
+      font-family: $fontFamilyTitle;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.caption {
+  align-self: flex-end;
+  position: relative;
+
+  @include small {
+    top: -3rem;
+  }
+
+  h3 {
+    font-family: $fontFamilyTitle;
+    color: $white;
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $white;
+  }
+}
+
+.image {
+  @extend %flex-row-align-center;
+  justify-content: flex-end;
+  //top: -2rem;
+
+  img {
+    @include small {
+      max-width: 55%;
+    }
+
+    @include medium {
+      width: 50%;
+      max-width: 600px;
+      position: relative;
+      top: 1rem;
+    }
+
+    @include large {
+      width: 70%;
+    }
+  }
+
+  @include small {
+    position: relative;
+    align-self: flex-end;
+    height: auto; 
+    width: 90%;
+    max-width: 450px;
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+  }
+
+  @include medium {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 600px;
+    top: 7rem;
+  }
+
+  @include large {
+    flex: 0.5;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+  }
+
+  @include wide {
+    flex: 0.6;
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+
+  /* Call To Action Override */
+  > div {
+    justify-content: flex-start;
+
+    @include small {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include medium {
+      align-items: flex-start;
+
+      a {
+        min-width: 275px;
+      }
+    }
+
+    @include large {
+      flex-direction: row;
+    }
+
+    a {
+      color: $white;
+      border-color: $white;
+    }
+  }
+}

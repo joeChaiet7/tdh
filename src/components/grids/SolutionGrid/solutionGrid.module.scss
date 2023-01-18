@@ -1,0 +1,117 @@
+@use '../../../styles/abstracts' as *;
+
+.solutionGrid {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  max-width: 1050px;
+
+  @include small {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.heading {
+  margin: 0 auto;
+  max-width: 700px;
+
+  .title {
+    font-family: $fontFamilyTitle;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: $dark-purple;
+    text-align: center;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    text-align: center;
+  }
+}
+
+.solutionItem {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  box-shadow: 0 15px 25px $shadow;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    .image {
+      background-size: 110%;
+    }
+
+    .desc, .title {
+      color: $purple;
+    }
+  }
+
+  @include small {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  @include medium {
+    flex: 1 1 300px;
+    justify-content: center;
+  }
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  min-height: 245px;
+  transition: background-size 1s;
+
+  @include small {
+    width: 100%;
+    background-size: 100%;
+  }
+
+  @include medium {
+    width: 130%;
+  }
+
+  @include large {
+    width: 115%;
+  }
+}
+
+.content {
+  color: $dark-purple;
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+}
+
+.title {
+  font-family: $fontFamilySemiBold;
+  font-size: 1.2rem;
+  color: $dark-purple;
+  transition: color 0.3s;
+}
+
+.desc {
+  font-family: $fontFamilyBase;
+  margin-top: 0.5rem;
+  transition: color 0.3s;
+}
+
+.cta {
+  margin-top: 2rem;
+}

@@ -1,0 +1,88 @@
+@use '../../../styles/abstracts/' as *;
+@use './yextOverrides';
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background:  rgb(0 0 0 / 75%);
+  z-index: 16;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.globalSearch {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+  display: unset !important;
+
+  &.active {
+    transform: translateY(0);
+    height: 100%;
+  }
+
+  &.hidden {
+    transform: translateY(-200px);
+    height: unset;
+  }
+}
+
+.container {
+  @extend %flex-row-align-center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #fff;
+  height: $navHeight;
+  max-width: $layoutWidth;
+  margin: 0.25rem auto 0;
+  border-radius: 20px;
+  padding: 0 1rem 0 2rem;
+}
+
+.logo {
+  z-index: 10;
+  font-size: 0;
+  display: block;
+
+  img {
+    max-width: 115px;
+    min-width: 100px;
+  }
+}
+
+.search {
+  width: 100%;
+  background-color: #fff;
+  align-self: flex-start;
+  margin-top: 1.1rem;
+  border-radius: 0 0 20px 20px;
+
+  svg {
+    max-width: 20px;
+  }
+}
+
+.close {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  background: transparent;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  color: $dark-purple;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    color: $purple;
+  }
+
+  svg {
+    font-size: 1.5rem;
+  }
+}

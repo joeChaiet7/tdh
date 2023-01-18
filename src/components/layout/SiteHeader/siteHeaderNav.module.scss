@@ -1,0 +1,30 @@
+@use '../../../styles/abstracts/' as *;
+
+.siteHeaderNav {
+  height: 100%;
+
+  @include small {
+    display: none;
+  }
+
+  @include large {
+    display: flex;
+  }
+}
+
+.list {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  height: 100%;
+
+  li {
+    display: flex;
+    height: 100%;
+    
+    button {
+      padding: 1rem 1.25rem;
+      height: 100%;
+      z-index: 5;
+    }
+  }
+}

@@ -1,0 +1,243 @@
+@use '../../../styles/abstracts' as *;
+
+.quote {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  //overflow: hidden;
+  //clip-path: url('#waveclip');
+
+  @include small {
+    min-height: 825px;
+  }
+
+  @include medium {
+    min-height: 480px;
+  }
+
+  @include large {
+    min-height: 450px;
+  }
+}
+
+.container {
+  @extend %flex-row-align-center;
+  align-items: center;
+  flex: 1;
+  max-width: $layoutWidth;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 2;
+
+  @include small {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  @include medium {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @include large {
+    //height: 50vh;
+    padding: 2rem 1rem;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 5;
+
+  @include small {
+    flex: 0.5;
+    padding: 3rem 2rem 2rem;
+  }
+
+  @include medium {
+    flex: 1;
+    padding: 3rem 1rem 2rem;
+  }
+
+  @include large {
+    flex: 0.55;
+    padding: 0;
+  }
+}
+
+.heading {
+  h1, .title {
+    font-size: 3rem;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+}
+
+.quotation {
+  p {
+    color: $white;
+    margin: 0;
+    line-height: 1.4;
+
+    @include small {
+      font-size: 1.25rem;
+    }
+
+    @include medium {
+      font-size: 1.5rem;
+    }
+
+    &::after {
+      content: "\201D";
+      color: $white;
+      font-family: $fontFamilyTitle;
+      margin-left: 0.5rem;
+    }
+
+    &::before {
+      content: "\201C";
+      color: $white;
+      font-family: $fontFamilyTitle;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.caption {
+  position: relative;
+  height: 0;
+
+  @include small {
+    top: 5rem;
+    right: 0;
+    align-self: flex-start;
+  }
+
+  @include medium {
+    top: -3rem;
+    right: 8rem;
+    align-self: center;
+  }
+
+  @include large {
+    right: 12rem;
+  }
+
+  h3 {
+    font-family: $fontFamilyTitle;
+    color: $white;
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $white;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  //top: -2rem;
+
+  @include small {
+    align-items: center;
+    position: relative;
+    height: auto; 
+    flex: 1;
+    padding: 1rem;
+  }
+
+  @include medium {
+    flex-direction: column-reverse;
+    max-width: 350px;
+    align-items: flex-end;
+  }
+
+  @include large {
+    flex: 0.5;
+    width: 50%;
+    max-width: 500px;
+    padding: 0;
+    align-items: center;
+  }
+
+  img {
+    @include small {
+      max-width: 42%;
+      min-width: 230px;
+    }
+
+    @include medium {
+      max-width: 75%;
+    }
+
+    @include large {
+      max-width: 52%;
+    }
+
+    @include wide {
+      max-width: 53%;
+    }
+  }
+
+}
+
+.cta {
+  margin-top: 2rem;
+
+  /* Call To Action Override */
+  > div {
+    justify-content: flex-start;
+
+    @include small {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include medium {
+      align-items: flex-start;
+
+      a {
+        min-width: 275px;
+      }
+    }
+
+    @include large {
+      flex-direction: row;
+    }
+
+    a {
+      color: $white;
+      border-color: $white;
+      transition: color 0.3s, background-color 0.3s;
+
+
+      &:hover {
+        background-color: $white;
+        color: $dark-purple;
+      }
+    }
+  }
+}

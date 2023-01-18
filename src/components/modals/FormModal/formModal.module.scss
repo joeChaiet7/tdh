@@ -1,0 +1,117 @@
+@use '../../../styles/abstracts/' as *;
+@use '../modal';
+@use './marketoOverrides';
+
+$maxWidth: 600px;
+
+.heading {
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 475px;
+
+  .title {
+    color: $dark-purple;
+    font-family: $fontFamilyTitle;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+.form {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 auto;
+  padding: 1rem;
+  transition: transform 0.3s;
+  height: 100%;
+  max-height: 55vh;
+
+  @include small {
+    width: 98%;
+    max-height: unset;
+  }
+
+  @include medium {
+    width: $maxWidth;
+    max-height: 55vh;
+  }
+
+  @include landscape {
+    width: 65%;
+  }
+
+  .scrollContainer {
+    padding: 2rem 0.5rem;
+    background-color: $white;
+    border-radius: 40px;
+    min-width: $maxWidth;
+  }
+
+  .formContainer {
+    width: 100%;
+    height: 55vh;
+    padding: 2rem;
+    overflow-y: scroll;
+
+    form {
+      margin-top: 2rem;
+    }
+
+    &::-webkit-scrollbar {
+      width: 13px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      border: 4px solid rgba(255, 255, 255, 1);
+      background-clip: padding-box;
+      border-radius: 100px;
+      background: $grey;
+    }
+  }
+}
+
+.loading {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  height: 100%;
+}
+
+.success {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  height: 100%;
+  
+  svg {
+    color: $green;
+    font-size: 3rem;
+  }
+
+  p {
+    text-align: center;
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+    margin-top: 1rem;
+  }
+}
+
+.successTitle {
+  font-family: $fontFamilyTitle;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: $dark-purple;
+  text-align: center;
+  margin-top: 1rem;
+}

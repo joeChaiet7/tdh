@@ -1,0 +1,290 @@
+@use '../../../styles/abstracts/' as *;
+
+.genericText {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  text-align: center;
+
+  @include small {
+    padding: 0 1rem;
+  }
+
+  @include medium {
+    padding: 0;
+  }
+}
+
+.text {
+  > :not(:first-child) {
+    margin-top: 1rem;
+  }
+  
+  &.colThree {
+    ul {
+      @include small {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      @include medium {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  &.colTwo {
+    ul {
+
+      @include small {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      @include medium {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &.colOne {
+    ul {
+      margin-top: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &.bullet {
+    ul {
+      text-indent: 0.5rem;
+
+      li {
+        &::before {
+          content: "\e122";
+          align-self: flex-start;
+          color: $purple;
+          font-family: "FontAwesome Solid";
+          font-size: 1rem;
+          margin-right: 1rem;
+          margin-left: -2rem;
+        }
+      }
+    }
+  }
+
+
+  &.check {
+    ul {
+      li {
+        &::before {
+          content: "\f00c";
+          font-family: "FontAwesome Solid";
+          font-size: 0.9rem;
+          color: $purple;
+          background-color: $grey;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          padding: 0.25rem;
+          margin-right: 1rem;
+          margin-left: -2.25rem;
+        }
+      }
+    }
+  }
+
+  h3, h2 {
+    font-family: $fontFamilyTitle;
+    line-height: 1.2;
+    color: $dark-purple;
+
+    @include small {
+      font-size: 1.75rem;
+    }
+
+    @include medium {
+      font-size: 2.5rem;
+    }
+  }
+
+  h4 {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    color: $dark-purple;
+
+    @include small {
+      font-size: 1.25rem;
+    }
+
+    @include medium {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    font-family: $fontFamilyBase;
+    font-size: 1rem;
+    max-width: 755px;
+    margin: 0 auto;
+    color: $dark-purple;
+  
+    a {
+      color: $purple;
+      text-decoration: underline;
+      transition: color 0.3s;
+      
+      &:hover {
+        color: $dark-purple;
+      }
+    }
+  }
+
+  ol, ul {
+    li {
+      a {
+        font-family: $fontFamilyBase;
+        color: $purple;
+        text-decoration: underline;
+        transition: color 0.3s;
+        
+        &:hover {
+          color: $dark-purple;
+        }
+      }
+    }
+  }
+
+  ul {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem auto 0 1rem;
+
+    @include small {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+      padding: 0;
+      width: 100%;
+      min-width: 300px;
+    }
+
+    @include medium {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+
+    @include large {
+      gap: 1rem 2rem;
+    }
+
+    li {
+      //@extend %flex-row-align-center;
+      //justify-content: flex-start;
+      color: $dark-purple;
+      animation-delay: 2s;
+      line-height: 1.3;
+      font-family: $fontFamilyBase;
+      text-align: left;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+
+      @include small {
+        opacity: 1;
+      }
+    
+      @include large {
+        //opacity: 0;
+      }
+    
+      &.active {
+        @include large {
+          animation: fadeSlideRightDelay 3s ease forwards;
+        }
+      }
+    }
+  }
+
+  &.left {
+    @include small {
+      text-align: center;
+    }
+
+    @include large {
+      text-align: left;
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    @include small {
+      text-align: center;
+    }
+
+    @include large {
+      text-align: right;
+    }
+  }
+}
+
+.cta {
+  margin-top: 3rem;
+
+  /* CTA Override */
+  & > div {
+    a {
+      color: $purple;
+
+      svg {
+        color: $purple !important;
+      }
+
+      &:hover {
+        color: $dark-purple;
+
+        svg {
+          color: $dark-purple !important;
+        }
+      }
+    }
+  }
+}
+
+.disclaimer {
+  position: absolute;
+  text-align: left;
+  margin-top: 2rem;
+
+  p {
+    font-size: 0.9rem;
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+  }
+}
+
+/* Alignment */
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+/* Colors */
+.dark {
+  p, h2, h3, h4, div {
+    color: $dark-purple;
+  }
+}
+
+.light {
+  p, h2, h3, h4, div {
+    color: $white;
+  }
+}

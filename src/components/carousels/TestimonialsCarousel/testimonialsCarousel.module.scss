@@ -1,0 +1,363 @@
+@use '../../../styles/abstracts/' as *;
+
+@use '../carousel';
+
+.testimonials {
+  padding: 5rem 0;
+  margin-right: 0;
+  position: relative;
+  gap: 3rem;
+
+  @include small {
+    flex-direction: column;
+  }
+}
+
+.heading {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  gap: 1rem;
+  text-align: center;
+  max-width: 840px;
+
+  @include small {
+    padding: 0 1rem;
+  }
+
+  @include medium {
+    padding: 0;
+  }
+
+  .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    text-align: center;
+    line-height: 1.2;
+
+    @include small {
+      font-size: 2rem;
+    }
+
+    @include medium {
+      font-size: 2.5rem;
+    }
+  }  
+
+  p {
+    font-size: 1.1rem;
+    text-align: center;
+    font-family: $fontFamilyBase;
+    color: $dark-purple;
+  }
+}
+
+.carouselHeading {
+  font-family: $fontFamilyTitle;
+  text-align: center;
+  color: $dark-purple;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include small {
+    font-size: 1.5rem;
+  }
+
+  @include medium {
+    font-size: 1.75rem;
+  }
+}
+
+.testimonialsItem {
+  //padding: 2rem 0;
+  min-height: 350px;
+
+  @include small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @include medium {
+    width: 750px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.activeImage {
+  @include small {
+    flex: 1;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    animation: fade 1s ease;
+    border-radius: 20px 20px 20px 150px;
+  }
+
+  @include medium {
+    flex: 0.55;
+    max-height: unset;
+    overflow: unset;
+  }
+
+  img {
+    animation: fadeSlideUp 1s ease;
+    width: 100%;
+    border-radius: 20px 20px 20px 150px;
+  }
+}
+
+.itemInner {
+  @include small {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    flex: 1;
+  }
+
+  @include medium {
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0.75;
+  }
+}
+
+.slideWrapper {
+  @include small {
+    position: relative;
+    max-width: 450px;
+    animation: fade 1s ease;
+  }
+
+  @include medium {
+    margin-top: 1rem;
+  }
+}
+
+.inner {
+  @include small {
+    flex-direction: column;
+    animation: fadeSlideRight 1s ease;
+  }
+
+  @include medium {
+    min-height: 170px;
+  }
+}
+
+.content {
+  @include small {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 2rem 2rem;
+
+    p {
+      font-family: $fontFamilyBase;
+      color: $dark-purple;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      color: $purple;
+      text-align: left;
+      font-size: 1rem;
+      font-family: $fontFamilyBase;
+      color: $purple;
+  
+      &:hover {
+        color: $dark-purple;
+  
+        svg {
+          transform: translateX(3px);
+        }
+      }
+  
+      svg {
+        margin-left: 0.5rem;
+        font-size: 1.1rem;
+        transition: -webkit-transform .3s ease-in-out;
+        transition: transform .3s ease-in-out;
+        transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+  
+      }
+    }
+  }
+
+  @include medium {
+    flex: 0.5;
+    text-align: left;
+    padding: 0;
+
+    a {
+      justify-content: flex-start;
+    }
+  }
+
+  .title {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    padding: 0;
+
+    @include small {
+      text-align: center;
+      font-size: 1.5rem
+    }
+
+    @include medium {
+      text-align: left;
+      font-size: 2rem;
+    }
+  }
+  
+  .subtitle {
+    color: $purple;
+  
+    @include small {
+      font-size: 1.25rem;
+      font-family: $fontFamilySemiBold;
+    }
+  }
+
+  .role {
+    margin: 0;
+    color: $dark-purple;
+    font-family: $fontFamilySemiBold;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.image {
+  @include small {
+    width: 100%;
+    height: 100%;
+    max-height: 350px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  @include medium {
+    height: 100%;
+    max-height: unset;
+    flex: 0.5;
+  }
+}
+
+.navigation {
+  flex-direction: column;
+
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.buttons {
+  @extend %flex-row-align-center;
+  justify-content: center;
+
+  @include small {
+    position: relative;
+  }
+
+  @include medium {
+    position: relative;
+  }
+}
+
+.forward, .back {  
+  @include small {
+    position: unset;
+  }
+
+  @include medium {
+    //position: absolute;
+  }
+}
+
+.forward {
+  @include small {
+    margin-left: 2rem;
+  }
+
+  @include medium {
+    margin-left: 0.5rem;
+  }
+}
+
+.indicators {
+  @include small {
+    margin-top: 2rem;
+  }
+
+  @include medium {
+    margin-top: 0;
+  }
+}
+
+.additional {
+  padding: 2rem;
+  margin: 0 auto;
+  
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-purple;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      flex-direction: column;
+      text-align: center;
+
+      a {
+        margin-top: 1rem;
+      }
+    }
+
+    @include large {
+      flex-direction: row;
+      text-align: left;
+
+      a {
+        margin-top: 0;
+      }
+    }
+
+    a {
+      color: $purple;
+      display: flex;
+      align-items: center;
+      margin-left: 0.5rem;
+
+      svg {
+        margin-left: 0.25rem;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: $dark-purple;
+
+        svg {
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+}
+
+.additionalCta {
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.home {
+  .banner {
+    & div > div > section > section {
+      padding: 2rem 2rem 5rem 2rem;
+    }
+  }
+}

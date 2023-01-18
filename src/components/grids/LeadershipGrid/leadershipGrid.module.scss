@@ -1,0 +1,203 @@
+@use '../../../styles/abstracts' as *;
+
+$colors: $blue, $green, $pink, $purple;
+$repeat: 10;
+
+.leadershipGrid {
+  width: 100%;
+  padding: 5rem 0;
+  max-width: $layoutWidth;
+  margin: 0 auto;
+}
+
+.heading {
+  @extend %flex-column-align-center;
+  justify-content: center;
+
+  .title {
+    font-family: $fontFamilyTitle;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: $dark-purple;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+
+  @include small {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+.row {
+  .iconItem {
+    flex-direction: row;
+  }
+}
+
+.column {
+  .iconItem {
+    flex-direction: column;
+  }
+}
+
+.iconItem {
+  display: flex;
+  flex-direction: row;
+
+  &.vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+  }
+
+  &.horizontal {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @include small {
+    flex: 1 200px;
+    justify-content: flex-start;
+  }
+
+  @include medium {
+    flex: 0 325px;
+    justify-content: center;
+  }
+}
+
+.icon {
+  @extend %flex-row-align-center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 1rem;
+  height: 100%;
+  
+  svg {
+    color: $dark-purple;
+    font-size: 2rem;
+  }
+
+  img {
+    max-width: 30px;
+  }
+}
+
+.content {
+  color: $dark-purple;
+}
+
+.title {
+  font-family: $fontFamilySemiBold;
+  font-size: 1.2rem;
+  color: $dark-purple;
+}
+
+.desc {
+  font-family: $fontFamilyBase;
+  //margin-top: 0.5rem;
+}
+
+.leadershipItemSvg {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  width: 250px;
+
+  .leadershipImage {
+    transform: scale(0.9, 0.9);
+    -webkit-transform: scale(0.9, 0.9);
+    transition: transform 0.3s;
+    -webkit-backface-visibility: hidden;
+
+    &:hover {
+      transform: scale(1, 1);
+
+      .foreground {
+        transform: translateY(-2px) scale(1.05, 1.05);
+      }
+    }
+  }
+
+  .foreground {
+    transform-origin: 50% 50%;
+    transform: translateY(4px) scale(1, 1);
+    -webkit-transform: translateY(4px) scale(1, 1);
+    transition: transform 0.3s;
+    -webkit-backface-visibility: hidden;
+  }
+
+  &:nth-of-type(n){
+    .circle {
+      fill: $blue;
+    }
+  }
+
+  &:nth-of-type(2n){
+    .circle {
+      fill: $purple;
+      transform: scaleX(-1) translate(-190px, -30px);
+    }
+  }
+
+  &:nth-of-type(3n){
+    .circle {
+      fill: $green;
+    }
+  }
+  
+  &:nth-of-type(4n){
+    .circle {
+      fill: $pink;
+    }
+  }
+}
+
+.person {
+  margin-top: 1rem;
+  text-align: center;
+
+  .name {
+    font-family: $fontFamilyTitle;
+    color: $dark-purple;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+
+  .role {
+    font-family: $fontFamilySemiBold;
+    color: $purple;
+  }
+}
+
+.leadershipItem {
+  flex: 0 250px;
+
+  .image {
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    .name {
+      color: $purple;
+    }
+
+    .image {
+      transform: scale(1.025);
+    }
+  }
+}

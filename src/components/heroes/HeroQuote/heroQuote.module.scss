@@ -1,0 +1,195 @@
+@use '../../../styles/abstracts/' as *;
+
+$minHeight: 550px;
+
+.heroQuote {
+  position: relative;
+  padding: calc($navHeight + 1rem) 0 0;
+  background-color: $light-purple;
+
+  &.end {
+    .image {
+      order: -1;
+      left: 0;
+    }
+
+    .text {
+      order: 1;
+    }
+  }
+
+  &.start {
+
+    .image {
+      order: 1;
+      right: 0;
+    }
+
+    .text {
+      order: -1;
+    }
+  }
+} 
+
+.title {
+  text-align: left;
+  font-family: $fontFamilyTitle;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: $dark-purple;
+  margin-bottom: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.content {
+  @extend %flex-row-align-center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  flex: 1;
+  margin: 0 auto;
+  width: 100%;
+
+  @include small {
+    flex-direction: column;
+    margin-top: 3rem;
+    min-height: 450px;
+  }
+
+  @include medium {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  @include large {
+    align-items: center;
+    min-height: 550px;
+    margin-top: 0;
+  }
+}
+
+.text {
+  @include small {
+    flex: 1;
+    padding: 0 1rem;
+  }
+
+  @include medium {
+    flex: 0.65;
+    padding: 0 0 0 3rem;
+  }
+
+  @include large {
+    flex: 0.475;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+
+    &:before, &:after {
+      color: $dark-purple;
+      font-family: $fontFamilyTitle;
+      font-size: 1.75rem;
+      line-height: 0;
+    }
+
+    &::after {
+      content: "\201D";
+      margin-left: 0.25rem;
+    }
+  
+    &::before {
+      content: "\201C";
+      margin-right: 0.25rem;
+    }
+  }
+
+}
+
+.person {
+  margin-top: 1rem;
+
+  p {
+    &:before, &:after {
+      content: none;
+    }
+
+    &:first-of-type {
+      font-family: $fontFamilySemiBold;
+      color: $purple;
+      font-size: 1.25rem;
+    }
+
+    &:last-of-type {
+      font-family: $fontFamilySemiBold;
+      color: $black;
+      font-size: 1rem;
+    }
+  }
+}
+
+.image {
+  display: flex;
+  align-items: flex-end;
+  top: 0;
+  bottom: 0;
+  min-height: 100%;
+
+  @include small {
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    max-height: unset;
+
+    img {
+      width: 90%;
+      max-width: 500px;
+    }
+  }
+
+  @include medium {
+    flex: 0.5;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: unset;
+    position: absolute;
+    width: 50%;
+    max-width: 750px;
+    
+    img {
+      width: 100%;
+      max-width: unset;
+    }
+  }
+}
+
+.cta {
+
+  @include small {
+    & > div {
+      justify-content: center;
+    }
+    
+  }
+
+  @include medium {
+    & > div {
+      justify-content: flex-start;
+    }
+  }
+}

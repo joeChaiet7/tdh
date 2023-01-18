@@ -1,0 +1,90 @@
+@use '../../../styles/abstracts/' as *;
+
+$slideCount: var(--itemCount);
+$slidesInView: var(--slidesInView);
+
+.marquee {
+  @extend %flex-row-align-center;
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.awards {
+  padding: 2rem 0;
+}
+
+.heading {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.title {
+  font-family: $fontFamilyTitle;
+  color: $dark-purple;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.container {
+  @extend %flex-row-align-center;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee calc(var(--itemCount) * 10s) linear infinite;
+  position: relative;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.slides {
+  @extend %flex-row-align-center;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+
+  flex: 0 0 auto;
+  width: 150px;
+  //height: 200px;
+  box-sizing: border-box;
+  margin: 0 5rem;
+}
+
+.cta {  
+
+  /* CTA title Override*/
+  & > div {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include small {
+      font-size: 2rem;
+      padding: 0 1rem;
+    }
+
+    @include medium {
+      font-size: 2.5rem;
+      padding: 0;
+    }
+  }
+}
+
+/* Animations */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

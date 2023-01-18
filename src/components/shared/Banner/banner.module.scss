@@ -1,0 +1,233 @@
+@use '../../../styles/abstracts/' as *;
+
+$paddingValue: var(--paddingValue, 5rem 1rem);
+
+.banner {
+  padding: $paddingValue;
+
+  .title {
+    line-height: 1.2;
+  }
+
+  .left {
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: left;
+    }
+  }
+
+  .right {
+    @include small {
+      text-align: center;
+    }
+
+    @include medium {
+      text-align: right;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+  
+  /* Orientation */
+  &.row {
+    .container {
+      flex-direction: row;
+    }
+  }
+
+  &.column {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  /* Themes */
+  &.white {
+    background-color: $white;
+
+    .additional {
+      color: $white;
+    }
+
+    .title {
+      color: $dark-purple;
+      font-family: $fontFamilyTitle;
+      font-size: 2.5rem;
+
+      @include small {
+        font-size: 2.25rem;
+      }
+
+      @include medium {
+        font-size: 2.5rem;
+      }
+
+    }
+
+    p {
+      color: $dark-purple;
+      margin-top: 1rem;
+      margin-bottom: 0;
+      font-family: $fontFamilyBase;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+  }
+
+  &.dark {
+    background-color: $dark-purple;
+
+    .title {
+      color: $white;
+      font-family: $fontFamilyTitle;
+      font-size: 2.5rem;
+
+      @include small {
+        font-size: 2.25rem;
+      }
+
+      @include medium {
+        font-size: 2.5rem;
+      }
+
+    }
+
+    p {
+      color: $white;
+      margin-top: 1rem;
+      margin-bottom: 0;
+      font-family: $fontFamilyBase;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+.container {
+  max-width: $layoutWidth;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+
+  @include small {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.left, .right {
+  @include small {
+    width: 100%;
+    flex: 1;
+    text-align: center;
+  }
+
+  @include medium {
+    //flex: 0.5;
+    text-align: left;
+  }
+}
+
+.left {
+  //max-width: 470px;
+  flex: 0.65;
+
+  img {
+    max-width: 50px;
+    margin: 0 auto;
+  }
+}
+
+.right {
+
+  @include small {
+    flex: 0.5;
+
+    & > div {
+      margin: 1rem auto 0;
+
+      a {
+        max-width: 350px;
+        width: 100%;
+      }
+    }
+  }
+
+  @include medium {
+    & > div {   
+      flex-direction: column;
+
+      a {
+        max-width: 100%;
+        width: 80%;
+      }
+    }
+  }
+
+  @include large {
+    flex: 0.4;
+  }
+
+  @include wide {
+    & > div {   
+      flex-direction: row;
+         
+      a {
+        max-width: 100%;
+        width: unset;
+      }
+    }
+  }
+}
+
+.additional {
+  @extend %flex-row-align-center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: $fontFamilySemiBold;
+  text-align: center;
+  margin-top: 2rem;
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include large {
+    flex-direction: row;
+  }
+
+  svg {
+    color: $blue;
+    max-width: 50px;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin-top: 0 !important;
+  }
+
+  &.start {
+    svg {
+      order: -1;
+    }
+  }
+
+  &.end {
+    svg {
+      order: 0;
+    }
+  }
+}

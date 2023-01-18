@@ -1,0 +1,50 @@
+@use '../abstracts/' as *;
+
+.employers {
+  .slider {
+    position: relative;
+    top: 10rem;
+    margin-top: -10rem;  
+    z-index: 2;
+    padding-bottom: 7rem;
+
+    & > div {
+      > section {
+        padding-bottom: 5rem;
+      }
+    }
+  }
+
+  .bottomBanner {
+    position: relative;
+    z-index: 4;
+  }
+
+  .banner {
+    position: relative;
+    top: 10rem;
+    margin-top: -10rem;  
+    z-index: 2;
+
+    div {
+      & > section {
+        padding: 0;
+      }
+    }
+  }
+
+  .accordion {
+    position: relative;
+    z-index: 0;
+    
+    div  {
+      & > section {
+        padding-top: 12rem; //Add padding to the component within the WaveBackground
+      }
+    }
+  }
+
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

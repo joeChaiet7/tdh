@@ -1,0 +1,71 @@
+@use '../../../styles/abstracts/' as *;
+
+.eyebrow {
+  background-color: transparent;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 15;
+
+  @include small {
+    top: 0;
+    position: relative;
+    padding: 0
+  }
+
+  @include medium {
+    padding: 0.25rem 0.5rem;
+    position: absolute;
+    top: calc($navHeight + 1rem);
+  }
+
+  .inner {
+    @extend %flex-row-align-center;
+    justify-content: center;
+    background-color: $grey;
+    min-height: 45px;
+    border-radius: 50px;
+    color: #351f65;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-family: $fontFamilyBase;
+
+    @include small {
+      flex-direction: column;
+      padding: 95px 0.5rem 1rem;
+      gap: 0.5rem;
+      border-radius: 0 0 20px 20px;
+      font-size: 0.725rem;
+      top: 75px;
+      position: relative;
+      margin-top: -$navHeight;
+      opacity: 1;
+
+      svg {
+        display: none;
+      }
+    }
+
+    @include medium {
+      flex-direction: row;
+      padding: 0.5rem 2rem;
+      border-radius: 100px;
+      max-width: $layoutWidth;
+      margin-top: unset;
+      top: unset;
+      opacity: 0.9;
+      font-size: 1rem;
+
+      svg {
+        display: flex;
+      }
+    }
+
+    svg {
+      color: $blue;
+      font-size: 1.2rem;
+      max-width: 20px;
+
+    }
+  }
+}

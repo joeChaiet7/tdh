@@ -1,0 +1,32 @@
+@use '../../../styles/abstracts/' as *;
+
+.title {
+  font-family: $fontFamilyBold;
+  color: $dark-purple;
+  font-size: 1rem;
+}
+
+.list {
+  margin-top: 1rem;
+}
+
+.listItem {
+  margin-top: 1rem;
+  font-family: $fontFamilyBase;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  a, button {
+    color: $dark-purple;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}

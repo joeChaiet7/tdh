@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+.healthPlans {
+  .slider {
+    position: relative;
+    top: 10rem;
+    margin-top: -10rem;  
+    z-index: 2;
+    padding-bottom: 7rem;
+
+    & > div {
+      > section {
+        padding-bottom: 5rem;
+      }
+    }
+  }
+
+  .banner {
+    position: relative;
+    z-index: 4;
+  }
+
+  .disclaimer {
+    @extend %disclaimer;
+  }
+}

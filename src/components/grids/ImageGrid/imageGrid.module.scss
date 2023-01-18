@@ -1,0 +1,146 @@
+@use '../../../styles/abstracts' as *;
+
+.imageGrid {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 1100px;
+
+  @include small {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  &.twoColumn {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include medium {
+      gap: 4rem 6rem;
+    }
+
+    .imageItem {
+      flex: 0 1;
+
+      @include small {
+        flex-basis: unset;
+      }
+
+      @include medium {
+        flex-basis: 45%;
+      }
+    }
+  }
+
+  &.threeColumn {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include medium {
+      gap: 3rem;
+    }
+
+    .imageItem {
+      flex: 0 1;
+      
+      @include small {
+        flex-basis: unset;
+      }
+
+      @include medium {
+        flex-basis: 310px;
+      }
+    }
+  }
+}
+
+.row {
+  .imageItem {
+    flex-direction: row;
+  }
+}
+
+.column {
+  .imageItem {
+    flex-direction: column;
+  }
+}
+
+.imageItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @include small {
+    flex: 1 200px;
+    justify-content: flex-start;
+  }
+
+  @include medium {
+    flex: 0 325px;
+    justify-content: center;
+  }
+}
+
+.horizontal {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+
+  .image {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .content {
+    grid-column: 2;
+  }
+}
+
+.vertical {
+  .image {
+    flex-direction: column;
+  }
+}
+
+.image {
+  @extend %flex-row-align-center;
+  align-items: center;
+  height: 100%;
+  
+  svg {
+    color: $dark-purple;
+    font-size: 2rem;
+  }
+
+  img {
+    max-width: 85px;
+  }
+}
+
+.content {
+  color: $dark-purple;
+}
+
+.title {
+  font-family: $fontFamilySemiBold;
+  font-size: 1.2rem;
+  color: $dark-purple;
+}
+
+.desc {
+  font-family: $fontFamilyBase;
+  //margin-top: 0.5rem;
+}

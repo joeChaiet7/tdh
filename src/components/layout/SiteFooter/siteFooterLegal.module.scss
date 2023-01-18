@@ -1,0 +1,80 @@
+@use '../../../styles/abstracts/' as *;
+
+.siteFooterLegal{
+  @extend %flex-row-align-center;
+  gap: 2rem;
+  border-top: 2px solid $grey;
+  padding-top: 2rem;
+
+  @include small {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  @include medium {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
+  }
+}
+
+.propel {
+  font-family: $fontFamilyBase;
+  color: $dark-purple;
+}
+
+.legal {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @include small {
+    flex-direction: column;
+  }
+
+  @include medium {
+    flex-direction: row;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    @include small {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @include medium {
+      justify-content: flex-start;
+    }
+
+    li {
+      color: $dark-purple;
+      margin: 0;
+      font-size: 0.9rem;
+      font-family: $fontFamilyBase;
+
+      @include small {
+        width: 100%;
+        text-align: center;
+      }
+
+      @include medium {
+        width: unset;
+        text-align: left;
+      }
+
+      a {
+        transition: color 0.3s;
+
+        &:hover {
+          color: $purple;
+        }
+      }
+    }
+  }
+}

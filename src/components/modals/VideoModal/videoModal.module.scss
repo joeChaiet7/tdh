@@ -1,0 +1,42 @@
+@use '../../../styles/abstracts' as *;
+@use '../modal';
+
+$maxWidth: 900px;
+
+.video {
+  @extend %flex-column-align-center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 auto;
+  padding: 1rem;
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: $maxWidth;
+
+  @include landscape {
+    width: 65%;
+  }
+
+  video {
+    width: 100%;
+    max-width: $maxWidth;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+}
+
+.iframe {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  
+  iframe {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+}
