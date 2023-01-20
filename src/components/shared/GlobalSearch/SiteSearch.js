@@ -3,19 +3,6 @@ import OverflowContext from '../../../context/OverflowContext';
 import { v4 as uuidv4 } from 'uuid';
 import ReactMarkdown from 'react-markdown';
 
-import '@yext/search-ui-react/bundle.css'
-
-import {
-  SearchBar,
-  StandardCard,
-  UniversalResults
-} from "@yext/search-ui-react"
-
-import { 
-  provideHeadless, 
-  SearchHeadlessProvider, 
-} from "@yext/search-headless-react";
-
 import { searchConfig } from '../../../utils/searchConfig';
 
 import * as styles from './siteSearch.module.scss';
@@ -34,7 +21,7 @@ const GridSection = ({ results, CardComponent, header }) => {
         <div className={styles.section}>
           <div className={styles.title}>{header.props.label} <hr/></div>
       
-          <div className={styles.container}>
+          {/*<div className={styles.container}>
             {filteredResults.map((r) => (
               <React.Fragment key={r.id}>
 
@@ -64,7 +51,7 @@ const GridSection = ({ results, CardComponent, header }) => {
 
               </React.Fragment>
             ))}
-          </div>
+          </div>*/}
         </div>
       }
     </>
@@ -260,7 +247,7 @@ export default function SiteSearch({ setShowResults }) {
   const resultsRef = useRef();
   const searchBarRef = useRef();
 
-  const verticalConfigMap = {
+  /*const verticalConfigMap = {
     promotion: {
       label: "",
       SectionComponent: GridSection,
@@ -360,7 +347,7 @@ export default function SiteSearch({ setShowResults }) {
   return (
     <div className={styles.siteSearch}>
       <div ref={searchBarRef} id="searchBarContainer">
-        { searcher &&
+        {/* searcher &&
           <SearchHeadlessProvider searcher={searcher}>
             <SearchBar 
               customCssClasses={{ 
@@ -375,11 +362,11 @@ export default function SiteSearch({ setShowResults }) {
             { results && results.length > 0 && 
               <div ref={resultsRef} className={styles.results} id="resultsContainer">
                 <UniversalResults verticalConfigMap={verticalConfigMap} />
-                {/*<VerticalResults CardComponent={StandardCard}/>*/}
+                {/*<VerticalResults CardComponent={StandardCard}/>
               </div>
             }
           </SearchHeadlessProvider>
-        }
+        */}
       </div>
     </div>
   )
