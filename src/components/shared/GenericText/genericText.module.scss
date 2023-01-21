@@ -61,7 +61,7 @@
           content: "\e122";
           align-self: flex-start;
           color: $purple;
-          font-family: "FontAwesome Solid";
+           
           font-size: 1rem;
           margin-right: 1rem;
           margin-left: -2rem;
@@ -76,7 +76,7 @@
       li {
         &::before {
           content: "\f00c";
-          font-family: "FontAwesome Solid";
+           
           font-size: 0.9rem;
           color: $purple;
           background-color: $grey;

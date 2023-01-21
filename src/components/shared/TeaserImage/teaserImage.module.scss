@@ -229,7 +229,7 @@ $maxHeight: 450px;
         &::before {
           display: inline-block;
           content: "\f00c";
-          font-family: "FontAwesome Solid";
+           
           font-size: 0.8rem;
           color: $purple;
           background-color: $grey;
@@ -251,7 +251,7 @@ $maxHeight: 450px;
           align-self: flex-start;
           content: "\e122";
           color: $purple;
-          font-family: "FontAwesome Solid";
+           
           font-size: 1rem;
           margin-right: 1rem;
         }
@@ -382,7 +382,7 @@ $maxHeight: 450px;
 
         &:before {
           content: "\f00c";
-          font-family: "FontAwesome Solid";
+           
           font-size: 0.8rem;
           color: $purple;
           background-color: $grey;

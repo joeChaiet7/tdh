@@ -124,7 +124,7 @@
       content: "\2022";
       color: $blue;
       font-size: 2rem;
-      font-family: "FontAwesome Solid";
+       
       position: absolute;
       top: 0;
       bottom: 0;
@@ -221,7 +221,7 @@
 
         &:before {
           content: "\f00c";
-          font-family: "FontAwesome Solid";
+           
           font-size: 0.8rem;
           margin-right: 0.5rem;
           color: $purple;
@@ -349,7 +349,7 @@
 
     &:before {
       content: "\e28b \e28b \e28b \e28b \e28b";
-      font-family: "FontAwesome Solid";
+       
       font-weight: 900;
       color: transparent;
       letter-spacing: 0;
@@ -366,7 +366,7 @@
 
     &:before {
       content: "\e28b \e28b \e28b \e28b \e28b";
-      font-family: "FontAwesome Solid";
+       
       font-weight: 900;
       color: $yellow;
       letter-spacing: 0;
